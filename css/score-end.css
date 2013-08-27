@@ -1,0 +1,69 @@
+.scorecard h5 {
+	font-weight: bold;
+}
+.scorecard .scoresheet thead th {
+	border-bottom:solid 2px black;
+}
+.scorecard .scoresheet td {
+	text-align:center;
+}
+.scorecard .scoresheet tbody td.hits,
+.scorecard .scoresheet tbody td.end-score,
+.scorecard .scoresheet tbody td.running-total {
+	background-color:#94b8e3;
+}
+.scorecard .scoresheet tbody td.hits {
+	border-left:solid 2px black;
+}
+.scorecard .scoresheet tfoot td {
+	border-top:solid 2px black;
+}
+.scorecard .scoresheet tfoot td.left {
+	text-align:left;
+}
+.scorecard .scoresheet tfoot td.right {
+	text-align:right;
+}
+.scorecard .scoresheet tfoot td.right div, 
+.scorecard .scoresheet tfoot td.right p {
+	float:right;
+}
+.scorecard .scoresheet tfoot td.right div {
+	background-color:#94b8e3;
+	padding:5px 10px;
+	margin-right:10px;
+}
+.gold {
+	text-align:center;
+	background-color:yellow;
+	color:black;
+}
+.red {
+	text-align:center;
+	background-color:red;
+	color:white;
+}
+.blue {
+	text-align:center;
+	background-color:blue;
+	color:white;
+}
+.black {
+	text-align:center;
+	background-color:black;
+	color:white;
+}
+.white {
+	text-align:center;
+	background-color:white;
+	color:black;
+}
+
+.scorepad {
+	background-color:#CCC;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.scorepad [class^="col-"] div {
+	padding:5px;
+}
