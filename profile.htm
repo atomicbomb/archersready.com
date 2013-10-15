@@ -9,21 +9,145 @@
 		<meta name="author" content="">
 		
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			body {
+				padding-top:70px;
+			}
+			.archers-header {
+				background-color:#563d7c;
+				border-color:#563d7c;
+				box-shadow:0 1px 0 rgba(255,255,255,.1);
+				text-shadow:0 -1px 0 rgba(0,0,0,.15);
+			}
+			.archers-header .navbar-header {
+				float:none;
+			}
+			.archers-header .navbar-text {
+				color:#fff;
+			}
+			.archers-header .navbar-brand, .archers-header .navbar-command {
+				color:#fff;
+			}
+			.archers-header .navbar-command {
+				padding:15px 15px;
+				font-size:18px;
+				line-height:20px;
+			}
+			.archers-header .navbar-toggle {
+				border-color:#563d7c;
+			}
+			.archers-header .navbar-collapse {
+				border-color:#463265;
+			}
+			.archers-header .navbar-nav > li > a {
+				color:#cdbfe3;
+			}
+			.archers-header .navbar-nav > .active > a, .archers-header .navbar-nav > .active > a:hover {
+				color:#fff;
+				background-color:#463265;
+			}
+			.archers-content .well.sidebar-nav {
+				margin-left:15px;
+			}
+			@media screen and (min-width: 768px) {
+				.archers-header .navbar-brand {
+					display:none;
+				}
+			}
+		</style>
+		<style type="text/css">
+			/* offcanvas */
+			@media screen and (max-width: 767px) {
+			  .row-offcanvas {
+			    position: relative;
+			    -webkit-transition: all 0.25s ease-out;
+			    -moz-transition: all 0.25s ease-out;
+			    transition: all 0.25s ease-out;
+			  }
+			
+			  .row-offcanvas-right .sidebar-offcanvas {
+			    left: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left .sidebar-offcanvas {
+			    right: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-right.active {
+			    left: 50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left.active {
+			    right: 50%; /* 6 columns */
+			  }
+			
+			  .sidebar-offcanvas {
+			    position: absolute;
+			    top: 0;
+			    width: 50%; /* 6 columns */
+			    padding-left:0;
+			    padding-right:5px;
+			  }
+			  .sidebar-offcanvas .well {
+				  padding:0;
+			  }
+			}		
+		</style>
+		<style type="text/css">
+			/* Page level Styles */
+		</style>
 	</head>
 	<body>
-	
-		<div class="container">
+		
+		<header class="navbar navbar-inverse navbar-fixed-top archers-header" role="banner">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" data-toggle="offcanvas" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+					<p id="navTitle" class="navbar-text">Profile</p>
+					<a class="navbar-command pull-right" href="#" id="buttonAddEvent"><span class="glyphicon glyphicon-plus"></span></a>
+				</div>
+			</div>
+		</header>
+		
+		<div id="pageContainer" class="container archers-content">
 			
-			<p>
-				Edit your profile<br />
-				Edit your equipment<br />
-				Manage Friend List<br />
-			</p>
+			<div class="row row-offcanvas row-offcanvas-right">
 			
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+					<div class="well sidebar-nav">
+						<ul class="nav">
+							<li class="active"><a href="home.htm">Events</a></li>
+							<li><a href="profile.htm">Profile</a></li>
+							<li><a href="login.htm">Logout</a></li>
+						</ul>
+					</div><!--/.well -->
+				</div>
+				<div class="col-xs-12 col-sm-9 containerContent">
+
+					<p>Profile Page Content</p>
+					
+				</div>
+				
+			</div>
 			
 		</div>
 		
 		<script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			
+			$(function() {
+			
+				$("[data-toggle=offcanvas]").click(function() {
+					$(".row-offcanvas").toggleClass("active");
+				});
+				
+				$("#buttonAddEvent").click(function() {
+					window.location = "choose-event-type.htm";
+				});
+
+			});
+
+		</script>
 	</body>
 </html>

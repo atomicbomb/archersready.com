@@ -11,8 +11,89 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<style type="text/css">
 			body {
-				padding-top:60px;
+				padding-top:70px;
 			}
+			.archers-header {
+				background-color:#563d7c;
+				border-color:#563d7c;
+				box-shadow:0 1px 0 rgba(255,255,255,.1);
+				text-shadow:0 -1px 0 rgba(0,0,0,.15);
+			}
+			.archers-header .navbar-header {
+				float:none;
+			}
+			.archers-header .navbar-text {
+				color:#fff;
+			}
+			.archers-header .navbar-brand, .archers-header .navbar-command {
+				color:#fff;
+			}
+			.archers-header .navbar-command {
+				padding:15px 15px;
+				font-size:18px;
+				line-height:20px;
+			}
+			.archers-header .navbar-toggle {
+				border-color:#563d7c;
+			}
+			.archers-header .navbar-collapse {
+				border-color:#463265;
+			}
+			.archers-header .navbar-nav > li > a {
+				color:#cdbfe3;
+			}
+			.archers-header .navbar-nav > .active > a, .archers-header .navbar-nav > .active > a:hover {
+				color:#fff;
+				background-color:#463265;
+			}
+			.archers-content .well.sidebar-nav {
+				margin-left:15px;
+			}
+			@media screen and (min-width: 768px) {
+				.archers-header .navbar-brand {
+					display:none;
+				}
+			}
+		</style>
+		<style type="text/css">
+			/* offcanvas */
+			@media screen and (max-width: 767px) {
+			  .row-offcanvas {
+			    position: relative;
+			    -webkit-transition: all 0.25s ease-out;
+			    -moz-transition: all 0.25s ease-out;
+			    transition: all 0.25s ease-out;
+			  }
+			
+			  .row-offcanvas-right .sidebar-offcanvas {
+			    left: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left .sidebar-offcanvas {
+			    right: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-right.active {
+			    left: 50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left.active {
+			    right: 50%; /* 6 columns */
+			  }
+			
+			  .sidebar-offcanvas {
+			    position: absolute;
+			    top: 0;
+			    width: 50%; /* 6 columns */
+			    padding-left:0;
+			    padding-right:5px;
+			  }
+			  .sidebar-offcanvas .well {
+				  padding:0;
+			  }
+			}		
+		</style>
+		<style type="text/css">
 			#buttonBack {
 				margin-left:10px;
 				margin-right:10px;
@@ -119,36 +200,56 @@
 	</head>
 	<body>
 
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<button type="button" id="buttonHome" class="btn btn-default navbar-btn btn-sm pull-left"  style="margin-left:10px;"><span class="glyphicon glyphicon-home"></span></button>
-			<p id="navTitle" class="navbar-text">AA Geelong</p>
-			<button type="button" id="buttonEventInfo" class="btn btn-default navbar-btn btn-sm pull-right" style="margin-right:10px;"><span class="glyphicon glyphicon-info-sign"></span></button>
-		</nav>
-		
-		<div id="pageContainer" class="container">
-			
-			<div class="panel panel-default">
-				<div class="panel-heading">Leaderboard</div>
-				<ul id="archerList" class="list-group" data-event-id="1">
-					<li class="list-group-item archer" data-archer-id="1">
-						<h4 class="list-group-item-heading">1: Chris Coppin</h4>
-						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
-					</li>
-					<li class="list-group-item archer" data-archer-id="2">
-						<h4 class="list-group-item-heading">2: Lauren Coppin</h4>
-						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
-					</li>
-					<li class="list-group-item archer" data-archer-id="3">
-						<h4 class="list-group-item-heading">3: Lisa Coppin</h4>
-						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
-					</li>
-					<li class="list-group-item archer" data-archer-id="4">
-						<h4 class="list-group-item-heading">4: Aidan Coppin</h4>
-						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
-					</li>
-				</ul>
+		<header class="navbar navbar-inverse navbar-fixed-top archers-header" role="banner">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" data-toggle="offcanvas" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+					<p class="navbar-text">AA Geelong</p>
+					<a class="navbar-command pull-right" href="#" id="buttonAddEvent"><span class="glyphicon glyphicon-plus"></span></a>
+				</div>
 			</div>
+		</header>
+		
+		<div class="container archers-content">
 			
+			<div class="row row-offcanvas row-offcanvas-right">
+			
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+					<div class="well sidebar-nav">
+						<ul class="nav">
+							<li class="active"><a href="home.htm">Events</a></li>
+							<li><a href="profile.htm">Profile</a></li>
+							<li><a href="login.htm">Logout</a></li>
+						</ul>
+					</div><!--/.well -->
+				</div>
+				<div class="col-xs-12 col-sm-9">
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">Leaderboard</div>
+						<ul id="archerList" class="list-group" data-event-id="1">
+							<li class="list-group-item archer" data-archer-id="1">
+								<h4 class="list-group-item-heading">1: Chris Coppin</h4>
+								<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+							</li>
+							<li class="list-group-item archer" data-archer-id="2">
+								<h4 class="list-group-item-heading">2: Lauren Coppin</h4>
+								<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+							</li>
+							<li class="list-group-item archer" data-archer-id="3">
+								<h4 class="list-group-item-heading">3: Lisa Coppin</h4>
+								<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+							</li>
+							<li class="list-group-item archer" data-archer-id="4">
+								<h4 class="list-group-item-heading">4: Aidan Coppin</h4>
+								<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				
+			</div>
 		</div>
 		
 		<script src="js/jquery-2.0.3.min.js"></script>
@@ -161,20 +262,19 @@
 			var $buttonEventInfo = $("#buttonEventInfo");
 			
 			$(function() {
-				
-				$buttonEventInfo.click(function() {
-					alert("Show Event Info");	
+
+				$("[data-toggle=offcanvas]").click(function() {
+					$(".row-offcanvas").toggleClass("active");
 				});
-				
-				$buttonHome.click(function() {
-					window.location = "home.htm";
-				});		
 				
 				$("#archerList li").click(function() {
 					var $this = $(this);
 					window.location = "score-end.htm?eventID=" + $("#archerList").data("event-id") + "&archerID=" + $this.data("archer-id");
 				});
 				
+				$("#buttonAddEvent").click(function() {
+					window.location = "choose-event-type.htm";
+				});				
 								
 			});
 		</script>

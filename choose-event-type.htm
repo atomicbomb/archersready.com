@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Archers Ready - Create Event</title>
+		<title>Archers Ready - Template</title>
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +11,96 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<style type="text/css">
 			body {
-				padding-top:60px;
+				padding-top:70px;
 			}
-			#buttonBack {
-				margin-left:10px;
-				margin-right:10px;
+			.archers-header {
+				background-color:#563d7c;
+				border-color:#563d7c;
+				box-shadow:0 1px 0 rgba(255,255,255,.1);
+				text-shadow:0 -1px 0 rgba(0,0,0,.15);
 			}
+			.archers-header .navbar-header {
+				float:none;
+			}
+			.archers-header .navbar-text {
+				color:#fff;
+			}
+			.archers-header .navbar-brand, .archers-header .navbar-command {
+				color:#fff;
+			}
+			.archers-header .navbar-command {
+				padding:15px 15px;
+				font-size:18px;
+				line-height:20px;
+			}
+			.archers-header .navbar-toggle {
+				border-color:#563d7c;
+			}
+			.archers-header .navbar-collapse {
+				border-color:#463265;
+			}
+			.archers-header .navbar-nav > li > a {
+				color:#cdbfe3;
+			}
+			.archers-header .navbar-nav > .active > a, .archers-header .navbar-nav > .active > a:hover {
+				color:#fff;
+				background-color:#463265;
+			}
+			.archers-content .well.sidebar-nav {
+				margin-left:15px;
+			}
+			@media screen and (min-width: 768px) {
+				.archers-header .navbar-brand {
+					display:none;
+				}
+			}
+		</style>
+		<style type="text/css">
+			/* offcanvas */
+			@media screen and (max-width: 767px) {
+			  .row-offcanvas {
+			    position: relative;
+			    -webkit-transition: all 0.25s ease-out;
+			    -moz-transition: all 0.25s ease-out;
+			    transition: all 0.25s ease-out;
+			  }
+			
+			  .row-offcanvas-right .sidebar-offcanvas {
+			    left: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left .sidebar-offcanvas {
+			    right: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-right.active {
+			    left: 50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left.active {
+			    right: 50%; /* 6 columns */
+			  }
+			
+			  .sidebar-offcanvas {
+			    position: absolute;
+			    top: 0;
+			    width: 50%; /* 6 columns */
+			    padding-left:0;
+			    padding-right:5px;
+			  }
+			  .sidebar-offcanvas .well {
+				  padding:0;
+			  }
+			}		
+		</style>
+		<style type="text/css">
 			#buttonEventStart {
 				display:none;
 			}
 			
+			.containerContent {
+				overflow:hidden;
+			}
 			.eventType {
 				position:relative;
 				top:0;
@@ -111,175 +191,247 @@
 			.archer {
 				height:46px;
 			}
-			
-			.add-archer {
-				width:100%;
+			.archer-add {
+				background-color:#5cb85c;
+				border-color:#4cae4c;
+				color:#fff;
+				text-align:center;
+				padding:0;
+			}
+			.archer-add a {
+				font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+				font-weight:500;
+				font-size:18px;
+				margin:0;
+				padding:0;
+				color:#fff;
+				text-decoration:none;
+				display:block;
+				line-height:100%;
+				height:34px;
+				margin-top:10px;
+			}
+			.archer-add:hover, .archer-add:active,
+			.archer-add h4:hover, .archer-add h4:active {
+				background-color:#4cae4c;
+				border-color:#5cb85c;
 			}
 			
+			.rowNavigation > div {
+				margin-right:15px;
+				margin-bottom:15px;
+			}
+			
+			
 			@media (min-width: 768px) {
-				.add-archer {
-					width:75px;
+				#templateHeader,
+				.eventTypeTemplates .list-group,
+				.eventSelectArchers .list-group {
+					margin-top:45px;
 				}
-				#buttonBack {
+				
+				.buttonBack {
 					margin-right:0px;
 				}
 			}
-
 		</style>
-
 	</head>
 	<body>
-
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<button type="button" id="buttonBack" class="btn btn-default navbar-btn btn-sm pull-left"><span class="glyphicon glyphicon-home"></span></button>
-			<p id="navTitle" class="navbar-text">New Event</p>
-			<button type="button" id="buttonEventStart" class="btn btn-default navbar-btn btn-sm pull-right" style="margin-right:10px;"><span class="glyphicon glyphicon-play"></span></button>
-		</nav>
 		
-		<div id="pageContainer" class="container">
+		<header class="navbar navbar-inverse navbar-fixed-top archers-header" role="banner">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" data-toggle="offcanvas" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+					<p id="navTitle" class="navbar-text">New Event</p>
+					<a class="navbar-command pull-right" href="#" id="buttonAddEvent"><span class="glyphicon glyphicon-plus"></span></a>
+				</div>
+			</div>
+		</header>
+		
+		<div id="pageContainer" class="container archers-content">
 			
-			<section class="eventType">
-				<div id="event-type" class="list-group">
-					<a href="#" class="list-group-item" data-templates="false">
-						<h4 class="list-group-item-heading">Practice</h4>
-						<p class="list-group-item-text">Unlimited Ends</p>
-					</a>
-					<a href="#" class="list-group-item" data-templates="false">
-						<h4 class="list-group-item-heading">Custom</h4>
-						<p class="list-group-item-text">Create your own</p>
-					</a>
-					<a href="#" class="list-group-item" data-templates="true">
-						<h4 class="list-group-item-heading">
-							Archery Australia
-							<span class="glyphicon glyphicon-chevron-right pull-right"></span>
-						</h4>
-					</a>
-				</div>
-			</section>
+			<div class="row row-offcanvas row-offcanvas-right">
 			
-			<section class="eventTypeTemplates">
-				<div class="list-group">
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Adelaide</h4>
-						<p class="list-group-item-text">12 Arrows, 60m,50m,40,30m</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Brisbane</h4>
-						<p class="list-group-item-text">120 Arrows, 70m,60m,50m,40m</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Canberra</h4>
-						<p class="list-group-item-text">90 Arrows, 60m,50m,40m</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Darwin</h4>
-						<p class="list-group-item-text">90 Arrows, 40m</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Geelong</h4>
-						<p class="list-group-item-text">90 Arrows, 30m</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Grange</h4>
-						<p class="list-group-item-text">90 Arrows, 60m</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Melbourne</h4>
-						<p class="list-group-item-text">90 Arrows, 50m</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">AA Newcastle</h4>
-						<p class="list-group-item-text">90 Arrows, 20m</p>
-					</a>			
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+					<div class="well sidebar-nav">
+						<ul class="nav">
+							<li class="active"><a href="home.htm">Events</a></li>
+							<li><a href="profile.htm">Profile</a></li>
+							<li><a href="login.htm">Logout</a></li>
+						</ul>
+					</div><!--/.well -->
 				</div>
-			</section>
-			
-			<section class="eventTemplateDetails">
-				<div class="list-group" id="templateHeader">
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading">{EventTemplateName}</h4>
-						<p class="list-group-item-text">{EventTemplateDetails}</p>
-					</div>
-				</div>
-				
-				<h5>Distance 1</h5>
-				<div class="list-group" id="distance1">
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Format</h4>
-						<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
-					</div>
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Distance</h4>
-						<p class="list-group-item-text pull-right">30m</p>
-					</div>
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Target Face</h4>
-						<p class="list-group-item-text pull-right">FITA 122cm</p>
-					</div>
-				</div>
+				<div class="col-xs-12 col-sm-9 containerContent">
 
-				<h5>Distance 2</h5>
-				<div class="list-group" id="distance2">
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Format</h4>
-						<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
-					</div>
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Distance</h4>
-						<p class="list-group-item-text pull-right">30m</p>
-					</div>
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Target Face</h4>
-						<p class="list-group-item-text pull-right">FITA 122cm</p>
-					</div>
-				</div>
+					<section class="eventType">
+						<div id="event-type" class="list-group">
+							<a href="#" class="list-group-item" data-templates="false">
+								<h4 class="list-group-item-heading">Practice</h4>
+								<p class="list-group-item-text">Unlimited Ends</p>
+							</a>
+							<a href="#" class="list-group-item" data-templates="false">
+								<h4 class="list-group-item-heading">Custom</h4>
+								<p class="list-group-item-text">Create your own</p>
+							</a>
+							<a href="#" class="list-group-item" data-templates="true">
+								<h4 class="list-group-item-heading">
+									Archery Australia
+									<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+								</h4>
+							</a>
+						</div>
+					</section>
+					
+					<section class="eventTypeTemplates">
+						<row class="rowNavigation">
+							<div class="col-xs-12 col-sm-3" style="padding:0;">
+								<button type="button" class="btn btn-default btn-block buttonBack">Back</button>
+							</div>
+						</row>
+						<div class="list-group">
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Adelaide</h4>
+								<p class="list-group-item-text">12 Arrows, 60m,50m,40,30m</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Brisbane</h4>
+								<p class="list-group-item-text">120 Arrows, 70m,60m,50m,40m</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Canberra</h4>
+								<p class="list-group-item-text">90 Arrows, 60m,50m,40m</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Darwin</h4>
+								<p class="list-group-item-text">90 Arrows, 40m</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Geelong</h4>
+								<p class="list-group-item-text">90 Arrows, 30m</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Grange</h4>
+								<p class="list-group-item-text">90 Arrows, 60m</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Melbourne</h4>
+								<p class="list-group-item-text">90 Arrows, 50m</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">AA Newcastle</h4>
+								<p class="list-group-item-text">90 Arrows, 20m</p>
+							</a>			
+						</div>
+					</section>
+					
+					<section class="eventTemplateDetails">
 
-				<h5>Distance 3</h5>
-				<div class="list-group" id="distance3">
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Format</h4>
-						<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
-					</div>
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Distance</h4>
-						<p class="list-group-item-text pull-right">30m</p>
-					</div>
-					<div class="list-group-item">
-						<h4 class="list-group-item-heading pull-left">Target Face</h4>
-						<p class="list-group-item-text pull-right">FITA 122cm</p>
-					</div>
-				</div>
-				
-				
-			</section>
-			
-			<section class="eventSelectArchers">
+						<row class="rowNavigation">
+							<div class="col-xs-12 col-sm-3" style="padding:0;">
+								<button type="button" class="btn btn-default btn-block buttonBack">Back</button>
+							</div>
+							<div class="col-xs-12 col-sm-3" style="padding:0;">
+								<button id="buttonSelectArchers" type="button" class="btn btn-primary btn-block">Select Archers</button>
+							</div>
+						</row>
 
-				<div class="list-group">
-					<div class="list-group-item archer">
-						<h4 class="list-group-item-heading pull-left">1: Chris Coppin</h4>
-						<span class="glyphicon glyphicon-th pull-right" style="cursor:pointer;"></span>
-					</div>
-					<div class="list-group-item archer">
-						<h4 class="list-group-item-heading pull-left">2: Lauren Coppin</h4>
-						<span class="glyphicon glyphicon-th pull-right" style="cursor:pointer;"></span>
-					</div>
+						<div class="list-group" id="templateHeader">
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">{EventTemplateName}</h4>
+								<p class="list-group-item-text">{EventTemplateDetails}</p>
+							</div>
+						</div>
+						
+						<h5>Distance 1</h5>
+						<div class="list-group" id="distance1">
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Format</h4>
+								<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Distance</h4>
+								<p class="list-group-item-text pull-right">30m</p>
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Target Face</h4>
+								<p class="list-group-item-text pull-right">FITA 122cm</p>
+							</div>
+						</div>
+		
+						<h5>Distance 2</h5>
+						<div class="list-group" id="distance2">
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Format</h4>
+								<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Distance</h4>
+								<p class="list-group-item-text pull-right">30m</p>
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Target Face</h4>
+								<p class="list-group-item-text pull-right">FITA 122cm</p>
+							</div>
+						</div>
+		
+						<h5>Distance 3</h5>
+						<div class="list-group" id="distance3">
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Format</h4>
+								<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Distance</h4>
+								<p class="list-group-item-text pull-right">30m</p>
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading pull-left">Target Face</h4>
+								<p class="list-group-item-text pull-right">FITA 122cm</p>
+							</div>
+						</div>
+						
+					</section>
+					
+					<section class="eventSelectArchers">
+						
+						<row class="rowNavigation">
+							<div class="col-xs-12 col-sm-3" style="padding:0;">
+								<button type="button" class="btn btn-default btn-block buttonBack">Back</button>
+							</div>
+							<div class="col-xs-12 col-sm-3" style="padding:0;">
+								<button id="buttonStart" type="button" class="btn btn-primary btn-block">Start</button>
+							</div>
+						</row>
+						
+						<div class="list-group">
+							<div class="list-group-item archer">
+								<h4 class="list-group-item-heading pull-left">1: Chris Coppin</h4>
+								<span class="glyphicon glyphicon-th pull-right" style="cursor:pointer;"></span>
+							</div>
+							<div class="list-group-item archer">
+								<h4 class="list-group-item-heading pull-left">2: Lauren Coppin</h4>
+								<span class="glyphicon glyphicon-th pull-right" style="cursor:pointer;"></span>
+							</div>
+							<div class="list-group-item archer archer-add">
+								<a href="#">Add</a>
+							</div>
+						</div>
+						
+					</section>
+					
+
+
 				</div>
 				
-				<div class="add-archer">
-					<button type="button" class="btn btn-primary btn-block">Add</button>
-				</div>
-				
-			</section>
+			</div>
 			
 		</div>
 		
 		<script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.event.swipe.js"></script>
 		<script type="text/javascript">
-			
-			var $buttonBack = $("#buttonBack");
+
+			var $buttonBack = $(".buttonBack");
 			var $container = $("#pageContainer");
 			var $navTitle = $("#navTitle");
 
@@ -289,13 +441,21 @@
 			var $eventSelectArchers = $(".eventSelectArchers");
 
 			var $templateHeader = $("#templateHeader");
-			var $buttonEventStart = $("#buttonEventStart");
+			var $buttonSelectArchers = $("#buttonSelectArchers");
 			var textPreviousTitle = [];
 			
-			var archers = jQuery(".eventSelectArchers .archer");
+			var archers = $(".eventSelectArchers .archer");
 			
 			$(function() {
 			
+				$("[data-toggle=offcanvas]").click(function() {
+					$(".row-offcanvas").toggleClass("active");
+				});
+				
+				$("#buttonAddEvent").click(function() {
+					window.location = "choose-event-type.htm";
+				});
+
 				$buttonBack.click(function() {
 					
 					switch ($("#navTitle").text()) {
@@ -312,7 +472,7 @@
 							break;
 						default:
 							$container.removeClass("showTemplateDetail");
-							$buttonEventStart.hide();
+							//$buttonSelectArchers.hide();
 							$navTitle.text(textPreviousTitle.pop());
 							break;
 					}
@@ -336,7 +496,7 @@
 							$container.addClass("showTemplateDetail");
 							$templateHeader.find("h4").text($this.find("h4").text());
 							$templateHeader.find("p").text($this.find("p").text());
-							$buttonEventStart.show();
+							//$buttonSelectArchers.show();
 						});
 					}
 					textPreviousTitle.push($navTitle.text().trim());
@@ -354,11 +514,11 @@
 					$container.addClass("showTemplateDetail");
 					$templateHeader.find("h4").text($this.find("h4").text());
 					$templateHeader.find("p").text($this.find("p").text());
-					$buttonEventStart.show();
+					//$buttonSelectArchers.show();
 					setBackButtonIcon();
 				});
 				
-				$buttonEventStart.click(function(e) {
+				$buttonSelectArchers.click(function(e) {
 
 					e.preventDefault();
 					$container.addClass("showSelectArchers");
@@ -378,9 +538,9 @@
 						e.preventDefault();
 					}
 				});
-				
+
 			});
-			
+
 			function setBackButtonIcon() {
 
 				if ($navTitle.text() == "New Event") {
@@ -391,6 +551,5 @@
 				
 			}
 		</script>
-		
 	</body>
 </html>

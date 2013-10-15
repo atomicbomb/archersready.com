@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Archers Ready - Create Event</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			body {
+				padding-top:60px;
+			}
+			#buttonBack {
+				margin-left:10px;
+				margin-right:10px;
+			}
+			#buttonEventStart {
+				display:none;
+			}
+			
+			.eventType {
+				position:relative;
+				top:0;
+				bottom:0;
+				left:0;
+				height:100%;
+				z-index:1;
+			}
+			.eventTypeTemplates {
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:100%;
+				width:100%;
+				overflow:hidden;
+				z-index:2;
+			}
+			.eventTemplateDetails {
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:100%;
+				width:100%;
+				overflow:hidden;
+				z-index:3;
+			}
+			.eventSelectArchers {
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:100%;
+				width:100%;
+				overflow:hidden;
+				z-index:4;
+			}
+			
+			.eventType, .eventTypeTemplates, .eventTemplateDetails, .eventSelectArchers {
+				transition:left 0.75s;
+				-moz-transition:left 0.75s;
+				-webkit-transition:left 0.75s;
+				-o-transition:left 0.75s;
+			}
+			
+			#pageContainer.showEventType .eventType {
+				left:-100%;
+				position:absolute;
+			}
+			
+			#pageContainer.showEventType .eventTypeTemplates {
+				left:0;
+				position:relative;
+				display:block;
+			}
+			
+			#pageContainer.showTemplateDetail .eventType {
+				left:-100%;
+				position:absolute;
+			}
+			
+			#pageContainer.showTemplateDetail .eventTypeTemplates {
+				left:-100%;
+				position:absolute;
+			}
+			
+			#pageContainer.showTemplateDetail .eventTemplateDetails {
+				left:0;
+				position:relative;
+				display:block;
+			}
+			
+			#pageContainer.showSelectArchers .eventSelectArchers {
+				left:0;
+				position:relative;
+				display:block;
+			}
+			#pageContainer.showSelectArchers .eventTemplateDetails {
+				left:-100%;
+				position:absolute;
+			}
+			
+			
+			#distance1 .list-group-item, 
+			#distance2 .list-group-item,
+			#distance3 .list-group-item {
+				min-height:40px;
+			}
+			
+			.archer {
+				height:46px;
+			}
+			
+			.add-archer {
+				width:100%;
+			}
+			
+			@media (min-width: 768px) {
+				.add-archer {
+					width:75px;
+				}
+				#buttonBack {
+					margin-right:0px;
+				}
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<button type="button" id="buttonBack" class="btn btn-default navbar-btn btn-sm pull-left"><span class="glyphicon glyphicon-home"></span></button>
+			<p id="navTitle" class="navbar-text">New Event</p>
+			<button type="button" id="buttonEventStart" class="btn btn-default navbar-btn btn-sm pull-right" style="margin-right:10px;"><span class="glyphicon glyphicon-play"></span></button>
+		</nav>
+		
+		<div id="pageContainer" class="container">
+			
+			<section class="eventType">
+				<div id="event-type" class="list-group">
+					<a href="#" class="list-group-item" data-templates="false">
+						<h4 class="list-group-item-heading">Practice</h4>
+						<p class="list-group-item-text">Unlimited Ends</p>
+					</a>
+					<a href="#" class="list-group-item" data-templates="false">
+						<h4 class="list-group-item-heading">Custom</h4>
+						<p class="list-group-item-text">Create your own</p>
+					</a>
+					<a href="#" class="list-group-item" data-templates="true">
+						<h4 class="list-group-item-heading">
+							Archery Australia
+							<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+						</h4>
+					</a>
+				</div>
+			</section>
+			
+			<section class="eventTypeTemplates">
+				<div class="list-group">
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Adelaide</h4>
+						<p class="list-group-item-text">12 Arrows, 60m,50m,40,30m</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Brisbane</h4>
+						<p class="list-group-item-text">120 Arrows, 70m,60m,50m,40m</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Canberra</h4>
+						<p class="list-group-item-text">90 Arrows, 60m,50m,40m</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Darwin</h4>
+						<p class="list-group-item-text">90 Arrows, 40m</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Geelong</h4>
+						<p class="list-group-item-text">90 Arrows, 30m</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Grange</h4>
+						<p class="list-group-item-text">90 Arrows, 60m</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Melbourne</h4>
+						<p class="list-group-item-text">90 Arrows, 50m</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">AA Newcastle</h4>
+						<p class="list-group-item-text">90 Arrows, 20m</p>
+					</a>			
+				</div>
+			</section>
+			
+			<section class="eventTemplateDetails">
+				<div class="list-group" id="templateHeader">
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading">{EventTemplateName}</h4>
+						<p class="list-group-item-text">{EventTemplateDetails}</p>
+					</div>
+				</div>
+				
+				<h5>Distance 1</h5>
+				<div class="list-group" id="distance1">
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Format</h4>
+						<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
+					</div>
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Distance</h4>
+						<p class="list-group-item-text pull-right">30m</p>
+					</div>
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Target Face</h4>
+						<p class="list-group-item-text pull-right">FITA 122cm</p>
+					</div>
+				</div>
+
+				<h5>Distance 2</h5>
+				<div class="list-group" id="distance2">
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Format</h4>
+						<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
+					</div>
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Distance</h4>
+						<p class="list-group-item-text pull-right">30m</p>
+					</div>
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Target Face</h4>
+						<p class="list-group-item-text pull-right">FITA 122cm</p>
+					</div>
+				</div>
+
+				<h5>Distance 3</h5>
+				<div class="list-group" id="distance3">
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Format</h4>
+						<p class="list-group-item-text pull-right">5 Ends of 6 Arrows</p>
+					</div>
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Distance</h4>
+						<p class="list-group-item-text pull-right">30m</p>
+					</div>
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading pull-left">Target Face</h4>
+						<p class="list-group-item-text pull-right">FITA 122cm</p>
+					</div>
+				</div>
+				
+				
+			</section>
+			
+			<section class="eventSelectArchers">
+
+				<div class="list-group">
+					<div class="list-group-item archer">
+						<h4 class="list-group-item-heading pull-left">1: Chris Coppin</h4>
+						<span class="glyphicon glyphicon-th pull-right" style="cursor:pointer;"></span>
+					</div>
+					<div class="list-group-item archer">
+						<h4 class="list-group-item-heading pull-left">2: Lauren Coppin</h4>
+						<span class="glyphicon glyphicon-th pull-right" style="cursor:pointer;"></span>
+					</div>
+				</div>
+				
+				<div class="add-archer">
+					<button type="button" class="btn btn-primary btn-block">Add</button>
+				</div>
+				
+			</section>
+			
+		</div>
+		
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.event.swipe.js"></script>
+		<script type="text/javascript">
+			
+			var $buttonBack = $("#buttonBack");
+			var $container = $("#pageContainer");
+			var $navTitle = $("#navTitle");
+
+			var $eventType = $(".eventType");
+			var $eventTypeTemplates = $(".eventTypeTemplates");
+			var $eventTemplateDetails = $(".eventTemplateDetails");
+			var $eventSelectArchers = $(".eventSelectArchers");
+
+			var $templateHeader = $("#templateHeader");
+			var $buttonEventStart = $("#buttonEventStart");
+			var textPreviousTitle = [];
+			
+			var archers = jQuery(".eventSelectArchers .archer");
+			
+			$(function() {
+			
+				$buttonBack.click(function() {
+					
+					switch ($("#navTitle").text()) {
+						case "New Event":
+							window.location = "home.htm";
+							break;
+						case "Archery Australia":
+							$container.removeClass("showEventType");
+							$navTitle.text(textPreviousTitle.pop());
+							break;
+						case "Select Archers":
+							$container.removeClass("showSelectArchers");
+							$navTitle.text(textPreviousTitle.pop());
+							break;
+						default:
+							$container.removeClass("showTemplateDetail");
+							$buttonEventStart.hide();
+							$navTitle.text(textPreviousTitle.pop());
+							break;
+					}
+					
+					setBackButtonIcon();
+					
+				});
+				
+				$(".eventType a").click(function(e) {
+					e.preventDefault();
+					var $this = $(this);
+					
+					if ($(this).data("templates") == true) {
+						// this option has sub-templates to choose.
+						$eventTypeTemplates.show(0, function() {
+							$container.addClass("showEventType");
+						});
+					} else {
+						// go straight to the event detail page.
+						$eventTypeTemplates.hide(0, function() {
+							$container.addClass("showTemplateDetail");
+							$templateHeader.find("h4").text($this.find("h4").text());
+							$templateHeader.find("p").text($this.find("p").text());
+							$buttonEventStart.show();
+						});
+					}
+					textPreviousTitle.push($navTitle.text().trim());
+					$navTitle.text($(this).find("h4").text().trim());
+					setBackButtonIcon();
+				});
+				
+				$(".eventTypeTemplates a").click(function(e) {
+					e.preventDefault();
+					var $this = $(this);
+
+					textPreviousTitle.push($navTitle.text().trim());
+					$navTitle.text($this.find("h4").text());
+
+					$container.addClass("showTemplateDetail");
+					$templateHeader.find("h4").text($this.find("h4").text());
+					$templateHeader.find("p").text($this.find("p").text());
+					$buttonEventStart.show();
+					setBackButtonIcon();
+				});
+				
+				$buttonEventStart.click(function(e) {
+
+					e.preventDefault();
+					$container.addClass("showSelectArchers");
+					textPreviousTitle.push($navTitle.text().trim());
+					$navTitle.text("Select Archers");
+
+					archers.on("swipeleft", function(e) {
+						alert($(this).html());
+					});
+					
+				});
+				
+				$('.eventSelectArchers').on("movestart", function(e) {
+					// If the movestart is heading off in an upwards or downwards
+					// direction, prevent it so that the browser scrolls normally.
+					if ((e.distX > e.distY && e.distX < -e.distY) || (e.distX < e.distY && e.distX > -e.distY)) {
+						e.preventDefault();
+					}
+				});
+				
+			});
+			
+			function setBackButtonIcon() {
+
+				if ($navTitle.text() == "New Event") {
+					$buttonBack.find("span").removeClass("glyphicon-chevron-left").addClass("glyphicon-home");
+				} else {
+					$buttonBack.find("span").removeClass("glyphicon-home").addClass("glyphicon-chevron-left");						
+				}
+				
+			}
+		</script>
+		
+	</body>
+</html>

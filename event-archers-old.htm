@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Archers Ready - Event Archers List</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			body {
+				padding-top:60px;
+			}
+			#buttonBack {
+				margin-left:10px;
+				margin-right:10px;
+			}
+			#buttonEventStart {
+				display:none;
+			}
+			.eventType {
+				position:relative;
+				top:0;
+				bottom:0;
+				left:0;
+				height:100%;
+				z-index:1;
+			}
+			.eventTypeTemplates {
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:100%;
+				width:100%;
+				overflow:hidden;
+				z-index:2;
+			}
+			.eventTemplateDetails {
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:100%;
+				width:100%;
+				overflow:hidden;
+				z-index:3;
+			}
+			.eventSelectArchers {
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:100%;
+				width:100%;
+				overflow:hidden;
+				z-index:4;
+			}
+			
+			
+			.eventType, .eventTypeTemplates, .eventTemplateDetails, .eventSelectArchers {
+				transition:left 0.75s;
+				-moz-transition:left 0.75s;
+				-webkit-transition:left 0.75s;
+				-o-transition:left 0.75s;
+			}
+			
+			#pageContainer.showEventType .eventType {
+				left:-100%;
+				position:absolute;
+			}
+			
+			#pageContainer.showEventType .eventTypeTemplates {
+				left:0;
+				position:relative;
+				display:block;
+			}
+			
+			#pageContainer.showTemplateDetail .eventType {
+				left:-100%;
+				position:absolute;
+			}
+			
+			#pageContainer.showTemplateDetail .eventTypeTemplates {
+				left:-100%;
+				position:absolute;
+			}
+			
+			#pageContainer.showTemplateDetail .eventTemplateDetails {
+				left:0;
+				position:relative;
+				display:block;
+			}
+			
+			#pageContainer.showSelectArchers .eventSelectArchers {
+				left:0;
+				position:relative;
+				display:block;
+			}
+			
+			#distance1 .list-group-item, 
+			#distance2 .list-group-item,
+			#distance3 .list-group-item {
+				min-height:40px;
+			}
+			
+			.archer:hover {
+				background-color:#e7e7e7;
+				cursor:pointer;
+			}
+			
+			@media (min-width: 768px) {
+				#buttonBack {
+					margin-right:0px;
+				}
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<button type="button" id="buttonHome" class="btn btn-default navbar-btn btn-sm pull-left"  style="margin-left:10px;"><span class="glyphicon glyphicon-home"></span></button>
+			<p id="navTitle" class="navbar-text">AA Geelong</p>
+			<button type="button" id="buttonEventInfo" class="btn btn-default navbar-btn btn-sm pull-right" style="margin-right:10px;"><span class="glyphicon glyphicon-info-sign"></span></button>
+		</nav>
+		
+		<div id="pageContainer" class="container">
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">Leaderboard</div>
+				<ul id="archerList" class="list-group" data-event-id="1">
+					<li class="list-group-item archer" data-archer-id="1">
+						<h4 class="list-group-item-heading">1: Chris Coppin</h4>
+						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+					</li>
+					<li class="list-group-item archer" data-archer-id="2">
+						<h4 class="list-group-item-heading">2: Lauren Coppin</h4>
+						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+					</li>
+					<li class="list-group-item archer" data-archer-id="3">
+						<h4 class="list-group-item-heading">3: Lisa Coppin</h4>
+						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+					</li>
+					<li class="list-group-item archer" data-archer-id="4">
+						<h4 class="list-group-item-heading">4: Aidan Coppin</h4>
+						<p class="list-group-item-text">Hits: 90/90, 10s:47, Xs:15</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			
+			var $container = $("#pageContainer");
+			var $navTitle = $("#navTitle");
+			var $buttonHome = $("#buttonHome");
+			var $buttonEventInfo = $("#buttonEventInfo");
+			
+			$(function() {
+				
+				$buttonEventInfo.click(function() {
+					alert("Show Event Info");	
+				});
+				
+				$buttonHome.click(function() {
+					window.location = "home.htm";
+				});		
+				
+				$("#archerList li").click(function() {
+					var $this = $(this);
+					window.location = "score-end.htm?eventID=" + $("#archerList").data("event-id") + "&archerID=" + $this.data("archer-id");
+				});
+				
+								
+			});
+		</script>
+		
+	</body>
+</html>
