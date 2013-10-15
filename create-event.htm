@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Archers Ready - Create Event</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			body {
+				padding-top:60px;
+			}
+			.template {
+				border-bottom:solid 1px #b8b8b8;
+				height:46px;
+			}
+			.template-type {
+				font-weight:bold;
+				font-size:18px;
+			}
+			.template-description {
+				display:block;
+			}
+			.single-line {
+				margin:10px 0;
+			}
+			#buttonBack {
+				margin-left:10px;
+				margin-right:10px;
+			}
+			@media (min-width: 768px) {
+				#buttonBack {
+					margin-right:0px;
+				}
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" id="buttonBack" class="btn btn-default navbar-btn btn-sm pull-left"><span class="glyphicon glyphicon-chevron-left"></span></button>
+				<p class="navbar-text">Details</p>
+			</div>
+		</nav>
+		
+		<div class="container">
+		
+			<!--<div class="row">
+				<div class="col-xs-12">-->
+					<ul class="list-group">
+						<li class="list-group-item">
+							<span class="template-type">Practice</span>
+							<span class="template-description">Unlimited Ends</span>
+						</li>
+						<li class="list-group-item">
+							<span class="template-type">Custom</span>
+							<span class="template-description">Create your own</span>
+						</li>
+						<li class="list-group-item">
+							<span class="template-type">Archery Australia</span>
+							<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+						</li>
+					</ul>
+				<!--</div>
+			</div>-->
+		
+<!--			<div class="row template">
+				<div class="col-xs-12">
+					<span class="template-type">Practice</span>
+					<span class="template-description">Unlimited Ends</span>
+				</div>
+			</div>
+			<div class="row template">
+				<div class="col-xs-12">
+					<span class="template-type">Custom</span>
+					<span class="template-description">Create your own</span>
+				</div>
+			</div>
+			<div class="row template">
+				<div class="col-xs-12 single-line">
+					<span class="template-type">Archery Australia</span>
+					<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+				</div>
+			</div>-->
+			
+		</div>
+		
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#buttonBack").click(function() {
+					window.location = "home.htm";
+				});
+			});
+		</script>
+	</body>
+</html>

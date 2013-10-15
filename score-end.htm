@@ -4,7 +4,7 @@
 		<title>Archers Ready - Score End</title>
 		
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
 		
@@ -13,8 +13,15 @@
 	</head>
 	<body>
 	
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<button type="button" id="buttonHome" class="btn btn-default navbar-btn btn-sm pull-left"  style="margin-left:10px;"><span class="glyphicon glyphicon-home"></span></button>
+			<p class="navbar-text">Chris Coppin</p>
+			<button type="button" id="buttonEdit" class="btn btn-default navbar-btn btn-sm pull-right"  style="margin-right:10px;"><span>Done</span></button>
+		</nav>
+		
 		<div class="container scorecard">
 			
+			<a id="set1"></a>
 			<h5>Distance 1: 30m</h5>
 			<table class="table table-bordered table-condensed scoresheet" data-set="1">
 				<thead>
@@ -100,6 +107,7 @@
 				</tfoot>
 			</table>
 			
+			<a id="set2"></a>
 			<h5>Distance 2: 30m</h5>
 			<table class="table table-bordered table-condensed scoresheet" data-set="2">
 				<thead>
@@ -185,6 +193,7 @@
 				</tfoot>
 			</table>
 			
+			<a id="set3"></a>
 			<h5>Distance 3: 30m</h5>
 			<table class="table table-bordered table-condensed scoresheet" data-set="3">
 				<thead>
@@ -272,88 +281,90 @@
 			
 		</div>
 		
-		<div class="scorepad">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-10 col-md-10">
-						<div class="row">
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block gold">X</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block gold">10</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block gold">9</button>
-							</div>
-							<div class="col-xs-2 col-md-2">&nbsp;</div>
-							<div class="col-xs-2 col-md-2">&nbsp;</div>
-						</div>
-					</div>
-					<div class="col-xs-2 col-md-2">
-						<div class="row">
-							<div class="col-xs-12 col-md-12">
-								<button type="button" class="btn btn-default btn-block">
-									<span class="glyphicon glyphicon-step-backward"></span>
-								</button>
+		<div id="scorepadContainer">
+			<div class="scorepad">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-10 col-md-10">
+							<div class="row">
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block gold">X</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block gold">10</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block gold">9</button>
+								</div>
+								<div class="col-xs-2 col-md-2">&nbsp;</div>
+								<div class="col-xs-2 col-md-2">&nbsp;</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-10 col-md-10">
-						<div class="row">
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block red">8</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block red">7</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block blue">6</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block blue">5</button>
-							</div>
-							<div class="col-xs-2 col-md-2">&nbsp;</div>
-						</div>
-					</div>
-					<div class="col-xs-2 col-md-2">
-						<div class="row">
-							<div class="col-xs-12 col-md-12">
-								<button type="button" class="btn btn-default btn-block">
-									<span class="glyphicon glyphicon-camera"></span>
-								</button>
+						<div class="col-xs-2 col-md-2">
+							<div class="row">
+								<div class="col-xs-12 col-md-12">
+									<button type="button" class="btn btn-default btn-lg btn-block">
+										<span class="glyphicon glyphicon-step-backward"></span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-10 col-md-10">
-						<div class="row">
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block black">4</button>
+					<div class="row">
+						<div class="col-xs-10 col-md-10">
+							<div class="row">
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block red">8</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block red">7</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block blue">6</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block blue">5</button>
+								</div>
+								<div class="col-xs-2 col-md-2">&nbsp;</div>
 							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block black">3</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block white">2</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block white">1</button>
-							</div>
-							<div class="col-xs-2 col-md-2">
-								<button type="button" class="btn btn-default btn-block white">M</button>
+						</div>
+						<div class="col-xs-2 col-md-2">
+							<div class="row">
+								<div class="col-xs-12 col-md-12">
+									<button type="button" class="btn btn-default btn-lg btn-block">
+										<span class="glyphicon glyphicon-camera"></span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-2 col-md-2">
-						<div class="row">
-							<div class="col-xs-12 col-md-12">
-								<button type="button" class="btn btn-default btn-block">
-									<span class="glyphicon glyphicon-ok"></span>
-								</button>
+					<div class="row">
+						<div class="col-xs-10 col-md-10">
+							<div class="row">
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block black">4</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block black">3</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block white">2</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block white">1</button>
+								</div>
+								<div class="col-xs-2 col-md-2">
+									<button type="button" class="btn btn-default btn-lg btn-block white">M</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2 col-md-2">
+							<div class="row">
+								<div class="col-xs-12 col-md-12">
+									<button type="button" id="buttonDone" class="btn btn-default btn-lg btn-block">
+										<span class="glyphicon glyphicon-ok"></span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -370,7 +381,27 @@
 					var numSet = $scoresheet.closest("table").data("set");
 					var numEnd = parseInt($scoresheet.children("td:first").text());
 					
-					alert("Set: " + numSet + "\r\nEnd: " + numEnd);
+					console.log("Set: " + numSet + "\r\nEnd: " + numEnd);
+					
+					$("#scorepadContainer").animate({
+						bottom: 0
+					}, 200, function() {
+						$(".scorecard").animate({
+							marginBottom: 157
+						}, 200, function() {
+							location.hash = "#set" + numSet;
+						});
+					});
+				});
+				$("#buttonDone").click(function() {
+					$(".scorecard").css("margin-bottom", "0");
+					$("#scorepadContainer").animate({bottom: "-157px"}, 300);
+				});
+				$("#buttonHome").click(function() {
+					window.location = "home.htm";
+				});
+				$("#buttonEdit").click(function() {
+					window.location = "event-archers.htm?eventid=1";
 				});
 			});
 		</script>

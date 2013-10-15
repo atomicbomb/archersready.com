@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Archers Ready - Event List</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			.table>thead>tr>td.group-header, 
+			.table>tbody>tr>td.group-header, 
+			.table>tfoot>tr>td.group-header, 
+			.table>thead>tr>th.group-header, 
+			.table>tbody>tr>th.group-header, 
+			.table>tfoot>tr>th.group-header, 
+			.table>thead>tr.group-header>td, 
+			.table>tbody>tr.group-header>td, 
+			.table>tfoot>tr.group-header>td, 
+			.table>thead>tr.group-header>th, 
+			.table>tbody>tr.group-header>th, 
+			.table>tfoot>tr.group-header>th {
+				background-color:#6c6c6c;
+				color:#ffffff;
+				font-weight:bold;
+			}
+			.table-condensed thead > tr > th, 
+			.table-condensed tbody > tr > th, 
+			.table-condensed tfoot > tr > th, 
+			.table-condensed thead > tr > td, 
+			.table-condensed tbody > tr > td, 
+			.table-condensed tfoot > tr > td {
+				padding:3px 5px;
+			}
+			.game-total {
+				width:50px;
+				text-align:center;
+				vertical-align:middle !important;
+			}
+			.game-type {
+				font-weight:bold;
+				font-size:18px;
+				display:block;
+			}
+			.game-info {
+				display:block;
+			}
+		</style>
+	</head>
+	<body style="padding-top:50px;">
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<button type="button" class="btn btn-default navbar-btn btn-sm pull-left"  style="margin-left:10px;"><span class="glyphicon glyphicon-cog"></span></button>
+			<p class="navbar-text">Events</p>
+			<button type="button" class="btn btn-default navbar-btn btn-sm pull-right" style="margin-right:10px;"><span class="glyphicon glyphicon-plus"></span></button>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+			<table class="table table-bordered table-hover table-condensed">
+				<tr class="group-header"><td colspan="2">August 2013</td></tr>
+				<tr class="score-end" data-score-id="10">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">840</td>
+				</tr>
+				<tr class="score-end" data-score-id="9">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">835</td>
+				</tr>
+				<tr class="score-end" data-score-id="8">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">820</td>
+				</tr>
+	
+				<tr class="group-header"><td colspan="2">July 2013</td></tr>
+				<tr class="score-end" data-score-id="7">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">840</td>
+				</tr>
+				<tr class="score-end" data-score-id="6">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">850</td>
+				</tr>
+	
+				<tr class="group-header"><td colspan="2">June 2013</td></tr>
+				<tr class="score-end" data-score-id="5">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">900</td>
+				</tr>
+				<tr class="score-end" data-score-id="4">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">840</td>
+				</tr>
+	
+				<tr class="group-header"><td colspan="2">May 2013</td></tr>
+				<tr class="score-end" data-score-id="3">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">840</td>
+				</tr>
+	
+				<tr class="group-header"><td colspan="2">April 2013</td></tr>
+				<tr class="score-end" data-score-id="2">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">840</td>
+				</tr>
+	
+				<tr class="group-header"><td colspan="2">March 2013</td></tr>
+				<tr class="score-end" data-score-id="1">
+					<td>
+						<span class="game-type">AA Geelong</span>
+						<span class="game-info">Mon 26, 90 Arrows. 30m.</span>
+					</td>
+					<td class="game-total">840</td>
+				</tr>
+	
+			</table>
+		</div>
+		
+		
+		
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".score-end").click(function() {
+					window.location = "score-end.htm?id=" + $(this).data("score-id");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,3 +1,6 @@
+body {
+	padding-top:60px;
+}
 .scorecard h5 {
 	font-weight: bold;
 }
@@ -33,6 +36,10 @@
 	padding:5px 10px;
 	margin-right:10px;
 }
+.scorecard .scoresheet tfoot p {
+	margin:0;
+	padding:5px 0;
+}
 .gold {
 	text-align:center;
 	background-color:yellow;
@@ -59,11 +66,24 @@
 	color:black;
 }
 
+#scorepadContainer {
+	position:fixed;
+	overflow:hidden;
+	height:157px;
+	width:100%;
+	border:solid 1px black;
+}
 .scorepad {
 	background-color:#CCC;
 	padding-top:5px;
 	padding-bottom:5px;
+	position:relative;
 }
 .scorepad [class^="col-"] div {
-	padding:5px;
+	padding:1px;
+}
+
+.scoresheet tbody tr:hover td {
+	background-color:#e7e7e7;
+	cursor:pointer;	
 }

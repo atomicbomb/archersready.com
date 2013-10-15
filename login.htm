@@ -10,42 +10,396 @@
 		
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<style type="text/css">
+			/* Global Styles */
+			
+			html,
+			body {
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			.vert-text {
+			  display: table-cell;
+			  vertical-align: middle;
+			  text-align: center;
+			}
+			
+			.vert-text h1 {
+			  color:#fff;
+			  padding: 0;
+			  margin: -50px 0 75px 0;
+			  font-size: 4.5em;
+			  font-weight: 700;
+			}
+			
+			@media (min-width: 768px) {
+				/* iPad Portrait */
+				.vert-text h1 {
+				  color:#fff;
+				  padding: 0;
+				  margin: 65px 0 175px 0;
+				  font-size: 4.5em;
+				  font-weight: 700;
+				}
+			}
+
+			@media (min-width: 992px) {
+				.vert-text h1 {
+				  color:#fff;
+				  padding: 0;
+				  margin: 150px 0 125px 0;
+				  font-size: 4.5em;
+				  font-weight: 700;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				.vert-text h1 {
+				  color:#fff;
+				  padding: 0;
+				  margin: 0;
+				  font-size: 4.5em;
+				  font-weight: 700;
+				}
+			}
+
+
+			
+			/* Side Menu */
+			
+			#sidebar-wrapper {
+			  margin-right: -250px;
+			  right: 0;
+			  width: 250px;
+			  background: #000;
+			  position: fixed;
+			  height: 100%;
+			  overflow-y: auto;
+			  z-index: 1000;
+			  -webkit-transition: all 0.4s ease 0s;
+			  -moz-transition: all 0.4s ease 0s;
+			  -ms-transition: all 0.4s ease 0s;
+			  -o-transition: all 0.4s ease 0s;
+			  transition: all 0.4s ease 0s;
+			}
+			
+			.sidebar-nav {
+			  position: absolute;
+			  top: 0;
+			  width: 250px;
+			  list-style: none;
+			  margin: 0;
+			  padding: 0;
+			}
+			
+			.sidebar-nav li {
+			  line-height: 40px;
+			  text-indent: 20px;
+			}
+			
+			.sidebar-nav li a {
+			  color: #999999;
+			  display: block;
+			  text-decoration: none;
+			}
+			
+			.sidebar-nav li a:hover {
+			  color: #fff;
+			  background: rgba(255,255,255,0.2);
+			  text-decoration: none;
+			}
+			
+			.sidebar-nav li a:active,
+			.sidebar-nav li a:focus {
+			  text-decoration: none;
+			}
+			
+			.sidebar-nav > .sidebar-brand {
+			  height: 55px;
+			  line-height: 55px;
+			  font-size: 18px;
+			}
+			
+			.sidebar-nav > .sidebar-brand a {
+			  color: #999999;
+			}
+			
+			.sidebar-nav > .sidebar-brand a:hover {
+			  color: #fff;
+			  background: none;
+			}
+			
+			#menu-toggle {
+			  top: 0;
+			  right: 0;
+			  position: fixed;
+			  z-index: 1;
+			}
+			
+			#sidebar-wrapper.active {
+			  right: 250px;
+			  width: 250px;
+			  -webkit-transition: all 0.4s ease 0s;
+			  -moz-transition: all 0.4s ease 0s;
+			  -ms-transition: all 0.4s ease 0s;
+			  -o-transition: all 0.4s ease 0s;
+			  transition: all 0.4s ease 0s;
+			}
+			
+			.toggle {
+			  margin: 5px 5px 0 0;
+			}
+			
+			/* Full Page Image Header Area */
+			
+			.header {
+			  display: table;
+			  height: 100%;
+			  width: 100%;
+			  position: relative;
+			  background-image:url(img/bg.JPG);
+			  /*background: url(../img/bg.JPG) no-repeat center center fixed; */
+			  background-repeat:no-repeat;
+			  background-position:center center fixed;
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+			}
+			
+			/* Intro */
+			
+			.intro {
+			  padding: 50px 0;
+			}
+			
+			/* Services */
+			
+			.services {
+			  background: #7fbbda;
+			  padding: 50px 0;
+			  color: #ffffff;
+			}
+			
+			.service-item {
+			  margin-bottom: 15px;
+			}
+			
+			i.service-icon {
+			  border: 3px solid #ffffff;
+			  border-radius: 50%;
+			  display: inline-block;
+			  font-size: 56px;
+			  width: 140px;
+			  height: 140px;
+			  line-height: 136px;
+			  vertical-align: middle; 
+			  text-align: center;
+			}
+			
+			i.service-icon:hover {
+			  font-size: 68px;
+			}
+			
+			/* Callout */
+			
+			.callout {
+			  color: #ffffff;
+			  display: table;
+			  height: 400px;
+			  width: 100%;
+			  background: url(img/section-two.JPG) no-repeat center center fixed; 
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+			}
+			
+			/* Portfolio */
+			
+			.portfolio {
+			  padding: 50px 0;
+			}
+			
+			.portfolio-item {
+			  margin-bottom: 25px;
+			}
+			
+			.img-portfolio {
+			  margin: 0 auto;
+			}
+			
+			
+			/* Call to Action */
+			
+			.call-to-action {
+			  color: #ffffff;
+			  background: #0a5175;
+			  padding: 50px 0;
+			}
+			
+			.call-to-action .btn {
+			  margin: 10px;
+			}
+			
+			/* Footer */
+			
+			footer {
+			  padding: 100px 0;
+			}
+		
+		</style>
 	</head>
 	<body>
 	
-		<div class="container">
-			
-			<form class="form-horizontal" action='' method="POST">
-			  <fieldset>
-			    <div id="legend">
-			      <legend class="">Login</legend>
-			    </div>
-			    <div class="control-group">
-			      <!-- Username -->
-			      <label class="control-label"  for="username">Username</label>
-			      <div class="controls">
-			        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-			      </div>
-			    </div>
-			 
-			    <div class="control-group">
-			      <!-- Password-->
-			      <label class="control-label" for="password">Password</label>
-			      <div class="controls">
-			        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-			      </div>
-			    </div>
-			 
-			 
-			    <div class="control-group">
-			      <!-- Button -->
-			      <div class="controls">
-			        <button class="btn btn-success">Login</button>
-			      </div>
-			    </div>
-			  </fieldset>
-			</form>			
+		<!-- Full Page Image Header Area -->
+		<div class="header">
+			<div class="vert-text">
+				<h1>Archers Ready</h1>
+				<a href="#intro" class="btn btn-default btn-lg" style="margin-right:20px;">Sign-in</a>
+				<a href="#intro" class="btn btn-default btn-lg" style="margin-left:20px;">Sign-up</a>
+			</div>
 		</div>
+		<!-- /Full Page Image Header Area -->
+		
+		<!-- Intro -->
+		<div id="intro" class="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<h2>Subtle Sidebar is the Perfect Template for your Next Portfolio Website Project!</h2>
+						<p class="lead">This template really has it all. It's up to you to customize it to your liking! It features some fresh photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Intro -->
+		
+		<!-- Services -->
+		<div class="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 text-center">
+						<h2>Our Services</h2>
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 col-md-offset-2 text-center">
+						<div class="service-item">
+							<i class="service-icon icon-rocket"></i>
+							<h4>Spacecraft Repair</h4>
+							<p>Did your navigation system shut down in the middle of that asteroid field? We can repair any dings and scrapes to your spacecraft!</p>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="service-item">
+							<i class="service-icon icon-magnet"></i>
+							<h4>Problem Solving</h4>
+							<p>Need to know how magnets work? Our problem solving solutions team can help you identify problems and conduct exploratory research.</p>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="service-item">
+							<i class="service-icon icon-shield"></i>
+							<h4>Blacksmithing</h4>
+							<p>Planning a time travel trip to the middle ages? Preserve the space time continuum by blending in with period accurate armor and weapons.</p>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="service-item">
+							<i class="service-icon icon-pencil"></i>
+							<h4>Pencil Sharpening</h4>
+							<p>We've been voted the best pencil sharpening service for 10 consecutive years. If you have a pencil that feels dull, we'll get it sharp!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Services -->
+		
+		<!-- Callout -->
+		<div class="callout">
+			<div class="vert-text">
+				<h1>A Dramatic Text Area</h1>
+			</div>
+		</div>
+		<!-- /Callout -->
+		
+		<!-- Portfolio -->
+		<div class="portfolio">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 text-center">
+						<h2>Our Work</h2>
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-2 text-center">
+						<div class="portfolio-item">
+							<a href="#"><img class="img-portfolio img-responsive" src="img/portfolio-1.jpg"></a>
+							<h4>Cityscape</h4>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="portfolio-item">
+							<a href="#"><img class="img-portfolio img-responsive" src="img/portfolio-2.jpg"></a>
+							<h4>Is That On Fire?</h4>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-2 text-center">
+						<div class="portfolio-item">
+							<a href="#"><img class="img-portfolio img-responsive" src="img/portfolio-3.jpg"></a>
+							<h4>Stop Sign</h4>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="portfolio-item">
+							<a href="#"><img class="img-portfolio img-responsive" src="img/portfolio-4.jpg"></a>
+							<h4>Narrow Focus</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Portfolio -->
+		
+		<!-- Call to Action -->
+		<div class="call-to-action">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<h3>The buttons below are impossible to resist.</h3>
+						<a href="#" class="btn btn-lg btn-default">Click Me!</a>
+						<a href="#" class="btn btn-lg btn-primary">Look at Me!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Call to Action -->
+		
+		<!-- Footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<ul class="list-inline">
+							<li><i class="icon-facebook icon-2x"></i></li>
+							<li><i class="icon-twitter icon-2x"></i></li>
+							<li><i class="icon-dribbble icon-2x"></i></li>
+						</ul>
+						<hr>
+						<p>Copyright &copy; Company 2013</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- /Footer -->
 		
 		<script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
