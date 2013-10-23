@@ -218,21 +218,16 @@
 			}
 			
 			.rowNavigation > div {
-				margin-right:15px;
-				margin-bottom:15px;
+				margin-bottom:10px;
 			}
-			
+			#templateHeader, 
+			.eventSelectArchers .list-group {
+				margin-top:45px;
+			}
+			.buttonBack:hover {text-decoration:none;}
 			
 			@media (min-width: 768px) {
-				#templateHeader,
-				.eventTypeTemplates .list-group,
-				.eventSelectArchers .list-group {
-					margin-top:45px;
-				}
-				
-				.buttonBack {
-					margin-right:0px;
-				}
+			 /* blah */
 			}
 		</style>
 	</head>
@@ -284,8 +279,8 @@
 					
 					<section class="eventTypeTemplates">
 						<row class="rowNavigation">
-							<div class="col-xs-12 col-sm-3" style="padding:0;">
-								<button type="button" class="btn btn-default btn-block buttonBack">Back</button>
+							<div class="col-sm-12" style="padding:8px 15px;">
+								<a href="#" class="buttonBack"><span class="glyphicon glyphicon-chevron-left"></span><span style="margin-left:5px;line-height:1;font-size:16px;">Back</span></a>
 							</div>
 						</row>
 						<div class="list-group">
@@ -327,11 +322,11 @@
 					<section class="eventTemplateDetails">
 
 						<row class="rowNavigation">
-							<div class="col-xs-12 col-sm-3" style="padding:0;">
-								<button type="button" class="btn btn-default btn-block buttonBack">Back</button>
+							<div class="col-xs-6 col-sm-6" style="padding:8px 15px;">
+								<a href="#" class="buttonBack"><span class="glyphicon glyphicon-chevron-left"></span><span style="margin-left:5px;line-height:1;font-size:16px;">Back</span></a>
 							</div>
-							<div class="col-xs-12 col-sm-3" style="padding:0;">
-								<button id="buttonSelectArchers" type="button" class="btn btn-primary btn-block">Select Archers</button>
+							<div class="col-xs-6 col-sm-6" style="padding:8px 15px;text-align:right">
+								<a href="#" id="selectArchers"><span style="margin-right:5px;line-height:1;font-size:16px;">Select Archers</span><span class="glyphicon glyphicon-chevron-right"></span></a>
 							</div>
 						</row>
 
@@ -395,14 +390,13 @@
 					<section class="eventSelectArchers">
 						
 						<row class="rowNavigation">
-							<div class="col-xs-12 col-sm-3" style="padding:0;">
-								<button type="button" class="btn btn-default btn-block buttonBack">Back</button>
+							<div class="col-xs-6 col-sm-6" style="padding:8px 15px;">
+								<a href="#" class="buttonBack"><span class="glyphicon glyphicon-chevron-left"></span><span style="margin-left:5px;line-height:1;font-size:16px;">Back</span></a>
 							</div>
-							<div class="col-xs-12 col-sm-3" style="padding:0;">
-								<button id="buttonStart" type="button" class="btn btn-primary btn-block">Start</button>
+							<div class="col-xs-6 col-sm-6" style="padding:8px 15px;text-align:right">
+								<a href="#" id="start"><span style="margin-right:5px;line-height:1;font-size:16px;">Start</span><span class="glyphicon glyphicon-chevron-right"></span></a>
 							</div>
-						</row>
-						
+						</row>						
 						<div class="list-group">
 							<div class="list-group-item archer">
 								<h4 class="list-group-item-heading pull-left">1: Chris Coppin</h4>
@@ -441,7 +435,7 @@
 			var $eventSelectArchers = $(".eventSelectArchers");
 
 			var $templateHeader = $("#templateHeader");
-			var $buttonSelectArchers = $("#buttonSelectArchers");
+			var $selectArchers = $("#selectArchers");
 			var textPreviousTitle = [];
 			
 			var archers = $(".eventSelectArchers .archer");
@@ -456,8 +450,8 @@
 					window.location = "choose-event-type.htm";
 				});
 
-				$buttonBack.click(function() {
-					
+				$buttonBack.click(function(e) {
+					e.preventDefault();
 					switch ($("#navTitle").text()) {
 						case "New Event":
 							window.location = "home.htm";
@@ -472,12 +466,11 @@
 							break;
 						default:
 							$container.removeClass("showTemplateDetail");
-							//$buttonSelectArchers.hide();
 							$navTitle.text(textPreviousTitle.pop());
 							break;
 					}
 					
-					setBackButtonIcon();
+					//setBackButtonIcon();
 					
 				});
 				
@@ -496,15 +489,14 @@
 							$container.addClass("showTemplateDetail");
 							$templateHeader.find("h4").text($this.find("h4").text());
 							$templateHeader.find("p").text($this.find("p").text());
-							//$buttonSelectArchers.show();
 						});
 					}
 					textPreviousTitle.push($navTitle.text().trim());
 					$navTitle.text($(this).find("h4").text().trim());
-					setBackButtonIcon();
+					//setBackButtonIcon();
 				});
 				
-				$(".eventTypeTemplates a").click(function(e) {
+				$(".eventTypeTemplates .list-group a").click(function(e) {
 					e.preventDefault();
 					var $this = $(this);
 
@@ -514,11 +506,9 @@
 					$container.addClass("showTemplateDetail");
 					$templateHeader.find("h4").text($this.find("h4").text());
 					$templateHeader.find("p").text($this.find("p").text());
-					//$buttonSelectArchers.show();
-					setBackButtonIcon();
 				});
 				
-				$buttonSelectArchers.click(function(e) {
+				$selectArchers.click(function(e) {
 
 					e.preventDefault();
 					$container.addClass("showSelectArchers");
@@ -541,7 +531,7 @@
 
 			});
 
-			function setBackButtonIcon() {
+/*			function setBackButtonIcon() {
 
 				if ($navTitle.text() == "New Event") {
 					$buttonBack.find("span").removeClass("glyphicon-chevron-left").addClass("glyphicon-home");
@@ -549,7 +539,7 @@
 					$buttonBack.find("span").removeClass("glyphicon-home").addClass("glyphicon-chevron-left");						
 				}
 				
-			}
+			}*/
 		</script>
 	</body>
 </html>
