@@ -2,234 +2,13 @@
 <html lang="en">
 	<head>
 		<title>Archers Ready - Template</title>
-		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<style type="text/css">
-			body {
-				padding-top:70px;
-			}
-			.archers-header {
-				background-color:#563d7c;
-				border-color:#563d7c;
-				box-shadow:0 1px 0 rgba(255,255,255,.1);
-				text-shadow:0 -1px 0 rgba(0,0,0,.15);
-			}
-			.archers-header .navbar-header {
-				float:none;
-			}
-			.archers-header .navbar-text {
-				color:#fff;
-			}
-			.archers-header .navbar-brand, .archers-header .navbar-command {
-				color:#fff;
-			}
-			.archers-header .navbar-command {
-				padding:15px 15px;
-				font-size:18px;
-				line-height:20px;
-			}
-			.archers-header .navbar-toggle {
-				border-color:#563d7c;
-			}
-			.archers-header .navbar-collapse {
-				border-color:#463265;
-			}
-			.archers-header .navbar-nav > li > a {
-				color:#cdbfe3;
-			}
-			.archers-header .navbar-nav > .active > a, .archers-header .navbar-nav > .active > a:hover {
-				color:#fff;
-				background-color:#463265;
-			}
-			.archers-content .well.sidebar-nav {
-				margin-left:15px;
-			}
-			@media screen and (min-width: 768px) {
-				.archers-header .navbar-brand {
-					display:none;
-				}
-			}
-		</style>
-		<style type="text/css">
-			/* offcanvas */
-			@media screen and (max-width: 767px) {
-			  .row-offcanvas {
-			    position: relative;
-			    -webkit-transition: all 0.25s ease-out;
-			    -moz-transition: all 0.25s ease-out;
-			    transition: all 0.25s ease-out;
-			  }
-			
-			  .row-offcanvas-right .sidebar-offcanvas {
-			    left: -50%; /* 6 columns */
-			  }
-			
-			  .row-offcanvas-left .sidebar-offcanvas {
-			    right: -50%; /* 6 columns */
-			  }
-			
-			  .row-offcanvas-right.active {
-			    left: 50%; /* 6 columns */
-			  }
-			
-			  .row-offcanvas-left.active {
-			    right: 50%; /* 6 columns */
-			  }
-			
-			  .sidebar-offcanvas {
-			    position: absolute;
-			    top: 0;
-			    width: 50%; /* 6 columns */
-			    padding-left:0;
-			    padding-right:5px;
-			  }
-			  .sidebar-offcanvas .well {
-				  padding:0;
-			  }
-			}		
-		</style>
-		<style type="text/css">
-			#buttonEventStart {
-				display:none;
-			}
-			
-			.containerContent {
-				overflow:hidden;
-			}
-			.eventType {
-				position:relative;
-				top:0;
-				bottom:0;
-				left:0;
-				height:100%;
-				z-index:1;
-			}
-			.eventTypeTemplates {
-				position:absolute;
-				top:0;
-				bottom:0;
-				left:100%;
-				width:100%;
-				overflow:hidden;
-				z-index:2;
-			}
-			.eventTemplateDetails {
-				position:absolute;
-				top:0;
-				bottom:0;
-				left:100%;
-				width:100%;
-				overflow:hidden;
-				z-index:3;
-			}
-			.eventSelectArchers {
-				position:absolute;
-				top:0;
-				bottom:0;
-				left:100%;
-				width:100%;
-				overflow:hidden;
-				z-index:4;
-			}
-			
-			.eventType, .eventTypeTemplates, .eventTemplateDetails, .eventSelectArchers {
-				transition:left 0.75s;
-				-moz-transition:left 0.75s;
-				-webkit-transition:left 0.75s;
-				-o-transition:left 0.75s;
-			}
-			
-			#pageContainer.showEventType .eventType {
-				left:-100%;
-				position:absolute;
-			}
-			
-			#pageContainer.showEventType .eventTypeTemplates {
-				left:0;
-				position:relative;
-				display:block;
-			}
-			
-			#pageContainer.showTemplateDetail .eventType {
-				left:-100%;
-				position:absolute;
-			}
-			
-			#pageContainer.showTemplateDetail .eventTypeTemplates {
-				left:-100%;
-				position:absolute;
-			}
-			
-			#pageContainer.showTemplateDetail .eventTemplateDetails {
-				left:0;
-				position:relative;
-				display:block;
-			}
-			
-			#pageContainer.showSelectArchers .eventSelectArchers {
-				left:0;
-				position:relative;
-				display:block;
-			}
-			#pageContainer.showSelectArchers .eventTemplateDetails {
-				left:-100%;
-				position:absolute;
-			}
-			
-			
-			#distance1 .list-group-item, 
-			#distance2 .list-group-item,
-			#distance3 .list-group-item {
-				min-height:40px;
-			}
-			
-			.archer {
-				height:46px;
-			}
-			.archer-add {
-				background-color:#5cb85c;
-				border-color:#4cae4c;
-				color:#fff;
-				text-align:center;
-				padding:0;
-			}
-			.archer-add a {
-				font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-				font-weight:500;
-				font-size:18px;
-				margin:0;
-				padding:0;
-				color:#fff;
-				text-decoration:none;
-				display:block;
-				line-height:100%;
-				height:34px;
-				margin-top:10px;
-			}
-			.archer-add:hover, .archer-add:active,
-			.archer-add h4:hover, .archer-add h4:active {
-				background-color:#4cae4c;
-				border-color:#5cb85c;
-			}
-			
-			.rowNavigation > div {
-				margin-bottom:10px;
-			}
-			#templateHeader, 
-			.eventSelectArchers .list-group {
-				margin-top:45px;
-			}
-			.buttonBack:hover {text-decoration:none;}
-			
-			@media (min-width: 768px) {
-			 /* blah */
-			}
-		</style>
+		<link href="css/archers-ready-global.css" rel="stylesheet" media="all" />
+		<link href="css/template/choose-event-type.css" rel="stylesheet" media="all" />
 	</head>
 	<body>
 		
@@ -256,7 +35,7 @@
 						</ul>
 					</div><!--/.well -->
 				</div>
-				<div class="col-xs-12 col-sm-9 containerContent">
+				<div class="col-xs-12 col-sm-9" id="main-content">
 
 					<section class="eventType">
 						<div id="event-type" class="list-group">
@@ -407,139 +186,20 @@
 								<span class="glyphicon glyphicon-th pull-right" style="cursor:pointer;"></span>
 							</div>
 							<div class="list-group-item archer archer-add">
-								<a href="#">Add</a>
+								<a href="#"><span style="margin-right:5px;">Add</span><span class="glyphicon glyphicon-plus"></span></a>
 							</div>
 						</div>
 						
 					</section>
-					
-
 
 				</div>
 				
 			</div>
 			
 		</div>
-		
 		<script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-
-			var $buttonBack = $(".buttonBack");
-			var $container = $("#pageContainer");
-			var $navTitle = $("#navTitle");
-
-			var $eventType = $(".eventType");
-			var $eventTypeTemplates = $(".eventTypeTemplates");
-			var $eventTemplateDetails = $(".eventTemplateDetails");
-			var $eventSelectArchers = $(".eventSelectArchers");
-
-			var $templateHeader = $("#templateHeader");
-			var $selectArchers = $("#selectArchers");
-			var textPreviousTitle = [];
-			
-			var archers = $(".eventSelectArchers .archer");
-			
-			$(function() {
-			
-				$("[data-toggle=offcanvas]").click(function() {
-					$(".row-offcanvas").toggleClass("active");
-				});
-				
-				$("#buttonAddEvent").click(function() {
-					window.location = "choose-event-type.htm";
-				});
-
-				$buttonBack.click(function(e) {
-					e.preventDefault();
-					switch ($("#navTitle").text()) {
-						case "New Event":
-							window.location = "home.htm";
-							break;
-						case "Archery Australia":
-							$container.removeClass("showEventType");
-							$navTitle.text(textPreviousTitle.pop());
-							break;
-						case "Select Archers":
-							$container.removeClass("showSelectArchers");
-							$navTitle.text(textPreviousTitle.pop());
-							break;
-						default:
-							$container.removeClass("showTemplateDetail");
-							$navTitle.text(textPreviousTitle.pop());
-							break;
-					}
-					
-					//setBackButtonIcon();
-					
-				});
-				
-				$(".eventType a").click(function(e) {
-					e.preventDefault();
-					var $this = $(this);
-					
-					if ($(this).data("templates") == true) {
-						// this option has sub-templates to choose.
-						$eventTypeTemplates.show(0, function() {
-							$container.addClass("showEventType");
-						});
-					} else {
-						// go straight to the event detail page.
-						$eventTypeTemplates.hide(0, function() {
-							$container.addClass("showTemplateDetail");
-							$templateHeader.find("h4").text($this.find("h4").text());
-							$templateHeader.find("p").text($this.find("p").text());
-						});
-					}
-					textPreviousTitle.push($navTitle.text().trim());
-					$navTitle.text($(this).find("h4").text().trim());
-					//setBackButtonIcon();
-				});
-				
-				$(".eventTypeTemplates .list-group a").click(function(e) {
-					e.preventDefault();
-					var $this = $(this);
-
-					textPreviousTitle.push($navTitle.text().trim());
-					$navTitle.text($this.find("h4").text());
-
-					$container.addClass("showTemplateDetail");
-					$templateHeader.find("h4").text($this.find("h4").text());
-					$templateHeader.find("p").text($this.find("p").text());
-				});
-				
-				$selectArchers.click(function(e) {
-
-					e.preventDefault();
-					$container.addClass("showSelectArchers");
-					textPreviousTitle.push($navTitle.text().trim());
-					$navTitle.text("Select Archers");
-
-					archers.on("swipeleft", function(e) {
-						alert($(this).html());
-					});
-					
-				});
-				
-				$('.eventSelectArchers').on("movestart", function(e) {
-					// If the movestart is heading off in an upwards or downwards
-					// direction, prevent it so that the browser scrolls normally.
-					if ((e.distX > e.distY && e.distX < -e.distY) || (e.distX < e.distY && e.distX > -e.distY)) {
-						e.preventDefault();
-					}
-				});
-
-			});
-
-/*			function setBackButtonIcon() {
-
-				if ($navTitle.text() == "New Event") {
-					$buttonBack.find("span").removeClass("glyphicon-chevron-left").addClass("glyphicon-home");
-				} else {
-					$buttonBack.find("span").removeClass("glyphicon-home").addClass("glyphicon-chevron-left");						
-				}
-				
-			}*/
-		</script>
+		<script src="js/archers-ready-global.js"></script>
+		<script src="js/template/choose-event-type.js"></script>
 	</body>
 </html>

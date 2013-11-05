@@ -2,104 +2,13 @@
 <html lang="en">
 	<head>
 		<title>Archers Ready - Score End</title>
-		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<style type="text/css">
-			body {
-				padding-top:70px;
-			}
-			.archers-header {
-				background-color:#563d7c;
-				border-color:#563d7c;
-				box-shadow:0 1px 0 rgba(255,255,255,.1);
-				text-shadow:0 -1px 0 rgba(0,0,0,.15);
-			}
-			.archers-header .navbar-header {
-				float:none;
-			}
-			.archers-header .navbar-text {
-				color:#fff;
-			}
-			.archers-header .navbar-brand, .archers-header .navbar-command {
-				color:#fff;
-			}
-			.archers-header .navbar-command {
-				padding:15px 15px;
-				font-size:18px;
-				line-height:20px;
-			}
-			.archers-header .navbar-toggle {
-				border-color:#563d7c;
-			}
-			.archers-header .navbar-collapse {
-				border-color:#463265;
-			}
-			.archers-header .navbar-nav > li > a {
-				color:#cdbfe3;
-			}
-			.archers-header .navbar-nav > .active > a, .archers-header .navbar-nav > .active > a:hover {
-				color:#fff;
-				background-color:#463265;
-			}
-			.archers-content .well.sidebar-nav {
-				margin-left:15px;
-			}
-			@media screen and (min-width: 768px) {
-				.archers-header .navbar-brand {
-					display:none;
-				}
-			}
-		</style>
-		<style type="text/css">
-			/* offcanvas */
-			@media screen and (max-width: 767px) {
-			  .row-offcanvas {
-			    position: relative;
-			    -webkit-transition: all 0.25s ease-out;
-			    -moz-transition: all 0.25s ease-out;
-			    transition: all 0.25s ease-out;
-			  }
-			
-			  .row-offcanvas-right .sidebar-offcanvas {
-			    left: -50%; /* 6 columns */
-			  }
-			
-			  .row-offcanvas-left .sidebar-offcanvas {
-			    right: -50%; /* 6 columns */
-			  }
-			
-			  .row-offcanvas-right.active {
-			    left: 50%; /* 6 columns */
-			  }
-			
-			  .row-offcanvas-left.active {
-			    right: 50%; /* 6 columns */
-			  }
-			
-			  .sidebar-offcanvas {
-			    position: absolute;
-			    top: 0;
-			    width: 50%; /* 6 columns */
-			    padding-left:0;
-			    padding-right:5px;
-			  }
-			  .sidebar-offcanvas .well {
-				  padding:0;
-			  }
-			}		
-		</style>
-		<link href="css/score-end.css" rel="stylesheet">
-		<style type="text/css">
-			.archers-content {
-				margin:0;
-				padding:0;
-			}
-		</style>
+		<link href="css/archers-ready-global.css" rel="stylesheet" media="screen">
+		<link href="css/template/score-end.css" rel="stylesheet">
 	</head>
 	<body>
 
@@ -126,270 +35,288 @@
 						</ul>
 					</div><!--/.well -->
 				</div>
-				<div class="col-xs-12 col-sm-9">
-						
-					<div class="container scorecard">
-						
-						<a id="set1"></a>
-						<h5>Distance 1: 30m</h5>
-						<table class="table table-bordered table-condensed scoresheet" data-set="1">
-							<thead>
-								<tr>
-									<th colspan="7">Arrows</th>
-									<th>Hits</th>
-									<th>Score</th>
-									<th>R/T</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td class="gold">X</td>
-									<td class="gold">10</td>
-									<td class="red">8</td>
-									<td class="blue">6</td>
-									<td class="black">4</td>
-									<td class="white">2</td>
-									<td class="hits">6</td>
-									<td class="end-score">40</td>
-									<td class="running-total">40</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="hits">6</td>
-									<td class="end-score">60</td>
-									<td class="running-total">100</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="hits">6</td>
-									<td class="end-score">48</td>
-									<td class="running-total">148</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="hits">6</td>
-									<td class="end-score">36</td>
-									<td class="running-total">184</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td class="black">4</td>
-									<td class="black">4</td>
-									<td class="black">4</td>
-									<td class="white">2</td>
-									<td class="white">2</td>
-									<td class="white">2</td>
-									<td class="hits">6</td>
-									<td class="end-score">18</td>
-									<td class="running-total">202</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="7" class="left">
-										<p>Hits: 30/30, 10s: 8, Xs: 7</p>
-									</td>
-									<td colspan="3" class="right">
-										<p>Avg:6.7</p>
-										<div class="round-total">202</div>
-									</td>
-								</tr>
-							</tfoot>
-						</table>
-						
-						<a id="set2"></a>
-						<h5>Distance 2: 30m</h5>
-						<table class="table table-bordered table-condensed scoresheet" data-set="2">
-							<thead>
-								<tr>
-									<th colspan="7">Arrows</th>
-									<th>Hits</th>
-									<th>Score</th>
-									<th>R/T</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td class="gold">X</td>
-									<td class="gold">10</td>
-									<td class="red">8</td>
-									<td class="blue">6</td>
-									<td class="black">4</td>
-									<td class="white">2</td>
-									<td class="hits">6</td>
-									<td class="end-score">40</td>
-									<td class="running-total">242</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="hits">6</td>
-									<td class="end-score">60</td>
-									<td class="running-total">302</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="hits">6</td>
-									<td class="end-score">48</td>
-									<td class="running-total">350</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="hits">6</td>
-									<td class="end-score">36</td>
-									<td class="running-total">386</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td class="black">4</td>
-									<td class="black">4</td>
-									<td class="black">4</td>
-									<td class="white">2</td>
-									<td class="white">2</td>
-									<td class="white">2</td>
-									<td class="hits">6</td>
-									<td class="end-score">18</td>
-									<td class="running-total">404</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="7" class="left">
-										<p>Hits: 30/30, 10s: 8, Xs: 7</p>
-									</td>
-									<td colspan="3" class="right">
-										<p>Avg:6.7</p>
-										<div class="round-total">202</div>
-									</td>
-								</tr>
-							</tfoot>
-						</table>
-						
-						<a id="set3"></a>
-						<h5>Distance 3: 30m</h5>
-						<table class="table table-bordered table-condensed scoresheet" data-set="3">
-							<thead>
-								<tr>
-									<th colspan="7">Arrows</th>
-									<th>Hits</th>
-									<th>Score</th>
-									<th>R/T</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td class="gold">X</td>
-									<td class="gold">10</td>
-									<td class="red">8</td>
-									<td class="blue">6</td>
-									<td class="black">4</td>
-									<td class="white">2</td>
-									<td class="hits">6</td>
-									<td class="end-score">40</td>
-									<td class="running-total">444</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="gold">X</td>
-									<td class="hits">6</td>
-									<td class="end-score">60</td>
-									<td class="running-total">504</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="red">8</td>
-									<td class="hits">6</td>
-									<td class="end-score">48</td>
-									<td class="running-total">552</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="blue">6</td>
-									<td class="hits">6</td>
-									<td class="end-score">36</td>
-									<td class="running-total">588</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td class="black">4</td>
-									<td class="black">4</td>
-									<td class="black">4</td>
-									<td class="white">2</td>
-									<td class="white">2</td>
-									<td class="white">2</td>
-									<td class="hits">6</td>
-									<td class="end-score">18</td>
-									<td class="running-total">606</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="7" class="left">
-										<p>Hits: 30/30, 10s: 8, Xs: 7</p>
-									</td>
-									<td colspan="3" class="right">
-										<p>Avg:6.7</p>
-										<div class="round-total">202</div>
-									</td>
-								</tr>
-							</tfoot>
-						</table>
-						
-					</div>
+				<div class="col-xs-12 col-sm-9" id="main-content">
 					
+					<!-- TODO: Finish this <div class="archer-controls">
+						<row class="rowNavigation">
+							<div class="col-xs-6 col-sm-6" style="padding:8px 15px;">
+								<a href="#" class="buttonBack"><span class="glyphicon glyphicon-chevron-left"></span><span style="margin-left:5px;line-height:1;font-size:16px;">Back</span></a>
+							</div>
+							<div class="col-xs-6 col-sm-6" style="padding:8px 15px;text-align:right">
+								<a href="#" id="selectArchers"><span style="margin-right:5px;line-height:1;font-size:16px;">Select Archers</span><span class="glyphicon glyphicon-chevron-right"></span></a>
+							</div>
+						</row>
+					</div>-->
+					
+					<div class="scorecard">
+						<div class="panel panel-default">
+							
+							<div id="set1" class="panel-heading">Distance 1: 30m</div>
+							<ul class="list-group">
+								<li class="list-group-item">
+									<table class="table table-bordered table-condensed scoresheet" data-set="1">
+										<thead>
+											<tr>
+												<th colspan="7">Arrows</th>
+												<th>Hits</th>
+												<th>Score</th>
+												<th>R/T</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td class="gold">X</td>
+												<td class="gold">10</td>
+												<td class="red">8</td>
+												<td class="blue">6</td>
+												<td class="black">4</td>
+												<td class="white">2</td>
+												<td class="hits">6</td>
+												<td class="end-score">40</td>
+												<td class="running-total">40</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td class="gold">X</td>
+												<td class="gold">X</td>
+												<td class="gold">X</td>
+												<td class="gold">X</td>
+												<td class="gold">X</td>
+												<td class="gold">X</td>
+												<td class="hits">6</td>
+												<td class="end-score">60</td>
+												<td class="running-total">100</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td class="red">8</td>
+												<td class="red">8</td>
+												<td class="red">8</td>
+												<td class="red">8</td>
+												<td class="red">8</td>
+												<td class="red">8</td>
+												<td class="hits">6</td>
+												<td class="end-score">48</td>
+												<td class="running-total">148</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td class="blue">6</td>
+												<td class="blue">6</td>
+												<td class="blue">6</td>
+												<td class="blue">6</td>
+												<td class="blue">6</td>
+												<td class="blue">6</td>
+												<td class="hits">6</td>
+												<td class="end-score">36</td>
+												<td class="running-total">184</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td class="black">4</td>
+												<td class="black">4</td>
+												<td class="black">4</td>
+												<td class="white">2</td>
+												<td class="white">2</td>
+												<td class="white">2</td>
+												<td class="hits">6</td>
+												<td class="end-score">18</td>
+												<td class="running-total">202</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="7" class="left">
+													<p>Hits: 30/30, 10s: 8, Xs: 7</p>
+												</td>
+												<td colspan="3" class="right">
+													<p>Avg:6.7</p>
+													<div class="round-total">202</div>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</li>
+							</ul>
+							
+						</div>
+						
+						<div class="panel panel-default">
+							<div id="set2" class="panel-heading">Distance 2: 30m</div>
+							<table class="table table-bordered table-condensed scoresheet" data-set="2">
+								<thead>
+									<tr>
+										<th colspan="7">Arrows</th>
+										<th>Hits</th>
+										<th>Score</th>
+										<th>R/T</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td class="gold">X</td>
+										<td class="gold">10</td>
+										<td class="red">8</td>
+										<td class="blue">6</td>
+										<td class="black">4</td>
+										<td class="white">2</td>
+										<td class="hits">6</td>
+										<td class="end-score">40</td>
+										<td class="running-total">242</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td class="gold">X</td>
+										<td class="gold">X</td>
+										<td class="gold">X</td>
+										<td class="gold">X</td>
+										<td class="gold">X</td>
+										<td class="gold">X</td>
+										<td class="hits">6</td>
+										<td class="end-score">60</td>
+										<td class="running-total">302</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td class="red">8</td>
+										<td class="red">8</td>
+										<td class="red">8</td>
+										<td class="red">8</td>
+										<td class="red">8</td>
+										<td class="red">8</td>
+										<td class="hits">6</td>
+										<td class="end-score">48</td>
+										<td class="running-total">350</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td class="blue">6</td>
+										<td class="blue">6</td>
+										<td class="blue">6</td>
+										<td class="blue">6</td>
+										<td class="blue">6</td>
+										<td class="blue">6</td>
+										<td class="hits">6</td>
+										<td class="end-score">36</td>
+										<td class="running-total">386</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td class="black">4</td>
+										<td class="black">4</td>
+										<td class="black">4</td>
+										<td class="white">2</td>
+										<td class="white">2</td>
+										<td class="white">2</td>
+										<td class="hits">6</td>
+										<td class="end-score">18</td>
+										<td class="running-total">404</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="7" class="left">
+											<p>Hits: 30/30, 10s: 8, Xs: 7</p>
+										</td>
+										<td colspan="3" class="right">
+											<p>Avg:6.7</p>
+											<div class="round-total">202</div>
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+						
+						<div class="panel panel-default">
+							<div id="set3" class="panel-heading">Distance 3: 30m</div>
+							<table class="table table-bordered table-condensed scoresheet" data-set="3">
+								<thead>
+									<tr>
+										<th colspan="7">Arrows</th>
+										<th>Hits</th>
+										<th>Score</th>
+										<th>R/T</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td class="hits"></td>
+										<td class="end-score"></td>
+										<td class="running-total"></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td class="hits"></td>
+										<td class="end-score"></td>
+										<td class="running-total"></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td class="hits"></td>
+										<td class="end-score"></td>
+										<td class="running-total"></td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td class="hits"></td>
+										<td class="end-score"></td>
+										<td class="running-total"></td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td class="hits"></td>
+										<td class="end-score"></td>
+										<td class="running-total"></td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="7" class="left">
+											<p>Hits: 0/30, 10s: 0, Xs: 0</p>
+										</td>
+										<td colspan="3" class="right">
+											<p>Avg:0.0</p>
+											<div class="round-total">0</div>
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+						
 					<div id="scorepadContainer">
 						<div class="scorepad">
 							<div class="container">
@@ -412,7 +339,7 @@
 									<div class="col-xs-2 col-md-2">
 										<div class="row">
 											<div class="col-xs-12 col-md-12">
-												<button type="button" class="btn btn-default btn-lg btn-block">
+												<button type="button" id="buttonBack" class="btn btn-default btn-lg btn-block">
 													<span class="glyphicon glyphicon-step-backward"></span>
 												</button>
 											</div>
@@ -440,7 +367,7 @@
 									<div class="col-xs-2 col-md-2">
 										<div class="row">
 											<div class="col-xs-12 col-md-12">
-												<button type="button" class="btn btn-default btn-lg btn-block">
+												<button type="button" id="buttonCamera" class="btn btn-default btn-lg btn-block">
 													<span class="glyphicon glyphicon-camera"></span>
 												</button>
 											</div>
@@ -487,44 +414,7 @@
 		
 		<script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-			$(function() {
-
-				$("[data-toggle=offcanvas]").click(function() {
-					$(".row-offcanvas").toggleClass("active");
-				});
-				$("#buttonAddEvent").click(function() {
-					window.location = "choose-event-type.htm";
-				});				
-			
-				$(".scoresheet tr").click(function() {
-					var $scoresheet = $(this);
-					var numSet = $scoresheet.closest("table").data("set");
-					var numEnd = parseInt($scoresheet.children("td:first").text());
-					
-					console.log("Set: " + numSet + "\r\nEnd: " + numEnd);
-					
-					$("#scorepadContainer").animate({
-						bottom: 0
-					}, 200, function() {
-						$(".scorecard").animate({
-							marginBottom: 157
-						}, 200, function() {
-							location.hash = "#set" + numSet;
-						});
-					});
-				});
-				$("#buttonDone").click(function() {
-					$(".scorecard").css("margin-bottom", "0");
-					$("#scorepadContainer").animate({bottom: "-157px"}, 300);
-				});
-				$("#buttonHome").click(function() {
-					window.location = "home.htm";
-				});
-				$("#buttonEdit").click(function() {
-					window.location = "event-archers.htm?eventid=1";
-				});
-			});
-		</script>
+		<script src="js/archers-ready-global.js"></script>
+		<script src="js/template/score-end.js"></script>
 	</body>
 </html>

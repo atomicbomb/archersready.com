@@ -1,0 +1,100 @@
+#buttonBack {
+	margin-left:10px;
+	margin-right:10px;
+}
+#buttonEventStart {
+	display:none;
+}
+.eventType {
+	position:relative;
+	top:0;
+	bottom:0;
+	left:0;
+	height:100%;
+	z-index:1;
+}
+.eventTypeTemplates {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:100%;
+	width:100%;
+	overflow:hidden;
+	z-index:2;
+}
+.eventTemplateDetails {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:100%;
+	width:100%;
+	overflow:hidden;
+	z-index:3;
+}
+.eventSelectArchers {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:100%;
+	width:100%;
+	overflow:hidden;
+	z-index:4;
+}
+
+
+.eventType, .eventTypeTemplates, .eventTemplateDetails, .eventSelectArchers {
+	transition:left 0.75s;
+	-moz-transition:left 0.75s;
+	-webkit-transition:left 0.75s;
+	-o-transition:left 0.75s;
+}
+
+#pageContainer.showEventType .eventType {
+	left:-100%;
+	position:absolute;
+}
+
+#pageContainer.showEventType .eventTypeTemplates {
+	left:0;
+	position:relative;
+	display:block;
+}
+
+#pageContainer.showTemplateDetail .eventType {
+	left:-100%;
+	position:absolute;
+}
+
+#pageContainer.showTemplateDetail .eventTypeTemplates {
+	left:-100%;
+	position:absolute;
+}
+
+#pageContainer.showTemplateDetail .eventTemplateDetails {
+	left:0;
+	position:relative;
+	display:block;
+}
+
+#pageContainer.showSelectArchers .eventSelectArchers {
+	left:0;
+	position:relative;
+	display:block;
+}
+
+#distance1 .list-group-item, 
+#distance2 .list-group-item,
+#distance3 .list-group-item {
+	min-height:40px;
+}
+
+.archer:hover {
+	background-color:#e7e7e7;
+	cursor:pointer;
+}
+
+@media (min-width: 768px) {
+	#buttonBack {
+		margin-right:0px;
+	}
+}

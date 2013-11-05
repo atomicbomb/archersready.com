@@ -1,3 +1,8 @@
+.scorecard {
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
 .scorecard h5 {
 	font-weight: bold;
 }
@@ -65,10 +70,15 @@
 
 #scorepadContainer {
 	position:fixed;
+	left:0;
+	bottom:-157px;
 	overflow:hidden;
 	height:157px;
 	width:100%;
 	border:solid 1px black;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
 }
 .scorepad {
 	background-color:#CCC;
@@ -83,4 +93,27 @@
 .scoresheet tbody tr:hover td {
 	background-color:#e7e7e7;
 	cursor:pointer;	
+}
+
+#main-content .list-group-item {
+	padding:0;
+}
+#main-content .scoresheet {
+	margin:0;
+	border:none;
+}
+#main-content table.scoresheet>thead>tr>th,
+#main-content table.scoresheet>tfoot>tr>td {
+	border-bottom:none;
+}
+#main-content table.scoresheet>thead>tr>th:first-child,
+#main-content table.scoresheet>tbody>tr>td:first-child,
+#main-content table.scoresheet>tfoot>tr>td:first-child
+ {
+	border-left:none;
+}
+#main-content table.scoresheet>thead>tr>th:last-child,
+#main-content table.scoresheet>tbody>tr>td:last-child,
+#main-content table.scoresheet>tfoot>tr>td:last-child {
+	border-right:none;
 }
