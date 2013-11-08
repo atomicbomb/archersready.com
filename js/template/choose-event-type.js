@@ -75,19 +75,29 @@ $(function() {
 		$container.addClass("showSelectArchers");
 		textPreviousTitle.push($navTitle.text().trim());
 		$navTitle.text("Select Archers");
-	
+		
 		archers.on("swipeleft", function(e) {
 			alert($(this).html());
 		});
 		
 	});
 	
-	$('.eventSelectArchers').on("movestart", function(e) {
-		// If the movestart is heading off in an upwards or downwards
-		// direction, prevent it so that the browser scrolls normally.
-		if ((e.distX > e.distY && e.distX < -e.distY) || (e.distX < e.distY && e.distX > -e.distY)) {
-			e.preventDefault();
-		}
+	$(".eventSelectArchers .archer").swipe( {
+		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			$(".swipe-delete").removeClass("show");
+			$(this).find(".swipe-delete").toggleClass("show");
+		},
+		threshold:50
+	});
+	
+	$(".swipe-delete").click(function(e) {
+		e.preventDefault();
+		var $archer = $(this).parent(".archer");
+		$archer.addClass("archer-delete");
+		$archer.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function(e) {
+			$archer.remove();
+		})
+		
 	});
 	
 	$("#start").click(function(e) {
@@ -96,13 +106,3 @@ $(function() {
 	});
 
 });
-
-/*function setBackButtonIcon() {
-
-if ($navTitle.text() == "New Event") {
-	$buttonBack.find("span").removeClass("glyphicon-chevron-left").addClass("glyphicon-home");
-} else {
-	$buttonBack.find("span").removeClass("glyphicon-home").addClass("glyphicon-chevron-left");						
-}
-
-}*/
