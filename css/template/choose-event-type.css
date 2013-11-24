@@ -107,20 +107,27 @@
 	padding:0 15px;
 }
 .archer-add {
-	text-align:center;
-	padding:0;
+	height:auto;
+}
+.archer-add .form-group {
+	margin-bottom:0;
 }
 .archer-add a {
 	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight:500;
 	font-size:18px;
-	margin:0;
+	margin:10px 0;
 	padding:0;
 	color:#5cb85c;
 	display:block;
 	line-height:100%;
-	height:34px;
-	margin-top:10px;
+}
+.archer-add-row {
+	padding-left:0;
+	padding-right:0;
+}
+.archer-add-row .form-group label {
+	display:none;
 }
 .swipe-delete {
 	position:absolute;
@@ -151,5 +158,11 @@
 .buttonBack:hover {text-decoration:none;}
 
 @media (min-width: 768px) {
- /* blah */
+	.archer-add-row {
+		padding-left:15px;
+		padding-right:15px;
+	}
+	.archer-add-row .form-group label {
+		display:inline-block;
+	}
 }

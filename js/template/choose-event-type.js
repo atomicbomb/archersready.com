@@ -13,6 +13,12 @@ var textPreviousTitle = [];
 
 var archers = $(".eventSelectArchers .archer");
 
+var swipeOptions =
+{
+	swipe:createSwipe,
+	threshold:50
+}
+
 $(function() {
 
 	$buttonBack.click(function(e) {
@@ -82,15 +88,10 @@ $(function() {
 		
 	});
 	
-	$(".eventSelectArchers .archer").swipe( {
-		swipeLeft:function(event, direction, distance, duration, fingerCount) {
-			$(".swipe-delete").removeClass("show");
-			$(this).find(".swipe-delete").toggleClass("show");
-		},
-		threshold:50
-	});
-	
-	$(".swipe-delete").click(function(e) {
+	$(".eventSelectArchers .archer").swipe( swipeOptions );
+		
+	//$(".swipe-delete").click(function(e) {
+	$(".archer-list").on("click", ".archer .swipe-delete", function(e) {
 		e.preventDefault();
 		var $archer = $(this).parent(".archer");
 		$archer.addClass("archer-delete");
@@ -100,9 +101,39 @@ $(function() {
 		
 	});
 	
+	$("#addArcher").click(function(e) {
+		e.preventDefault();
+		// TODO: Replace with AJAX call
+		
+		var archerNum = $(".archer").length;
+		
+		var html =  "<div class=\"list-group-item archer\">";
+			html += "    <h4 class=\"list-group-item-heading pull-left\">" + archerNum + ": " + $("#archerName").val() + "</h4>";
+			html += "    <span class=\"glyphicon glyphicon-th pull-right\" style=\"cursor:pointer;\"></span>";
+			html += "    <button class=\"swipe-delete\">Delete</button>";
+			html += "</div>";
+		
+		$(html).insertBefore(".archer-add");
+		$("#archerName").val("");
+		$(".eventSelectArchers").swipe( swipeOptions );
+	});
+	
 	$("#start").click(function(e) {
 		e.preventDefault();
 		window.location = "score-end.htm";
 	});
 
 });
+
+function createSwipe(event, direction) {
+
+	switch (direction) {
+		case "left":
+			$(".swipe-delete").removeClass("show");
+			$(event.toElement).find(".swipe-delete").toggleClass("show");
+			break;
+		default:
+			//Nothing
+			break;
+	}
+}
